@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Contact — Nyxion Labs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" type="image/png" href="./logos/icons/ms-icon-70x70.png"/>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="./logos/logo-Photoroom.png"" alt="Nyxion Labs logo"/>
+    <span class="brand-name">Nyxion Labs</span>
+  </a>
+  <nav class="nav">
+    <a href="index.html#solutions">Solutions</a>
+    <a href="packages.html">Packages</a>
+    <a href="consultation.html" class="btn btn-primary btn-xl nav-cta">Free Consultation</a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <h1>Contact Nyxion Labs</h1>
+  <p>We typically reply within one business day.</p>
+</section>
+
+<section class="section">
+  <div class="grid-2">
+    <form class="form" action="send_mail.php" method="POST">
+      <input type="hidden" name="form_name" value="Contact"/>
+      <label>Full Name
+        <input type="text" name="name" required/>
+      </label>
+      <label>Email
+        <input type="email" name="email" required/>
+      </label>
+      <label>Subject
+        <input type="text" name="subject" required/>
+      </label>
+      <label>Message
+        <textarea name="message" required></textarea>
+      </label>
+      <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off"/>
+      <button type="submit" class="btn btn-contact btn-xl">Send Message</button>
+    </form>
+
+    <div class="form" style="max-width:700px">
+      <h3 style="margin-top:0;color:#fff">Reach us directly</h3>
+      <p>Email: <a href="mailto:info@nyxionlabs.com">info@nyxionlabs.com</a></p>
+      <p>Phone: <a href="tel:+923194070681">+92 319 407 0681</a></p>
+      <p>WhatsApp (text): <a href="https://wa.me/4915751096455" target="_blank" rel="noopener">+49 1575 1096455</a></p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="foot-links">
+    <a href="packages.html">Packages</a>
+    <a href="consultation.html">Consultation</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="foot-copy">© 2025 Nyxion Labs</div>
+</footer>
+</body>
+</html>
