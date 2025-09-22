@@ -4,59 +4,63 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Schedule a Free Consultation — Nyxion Labs</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css"/>
   <link rel="icon" type="image/png" href="./logos/icons/ms-icon-70x70.png"/>
-
 </head>
 <body>
-<header class="site-header">
-  <a class="brand" href="index.html">
-    <img src="./logos/logo-Photoroom.png" alt="Nyxion Labs logo"/>
-    <span class="brand-name">Nyxion Labs</span>
-  </a>
-  <nav class="nav">
-    <a href="index.html#solutions">Solutions</a>
-    <a href="packages.html">Packages</a>
-    <a href="contact.html" class="btn btn-contact">Contact</a>
-    <a href="consultation.html" class="btn btn-primary btn-xl nav-cta">Free Consultation</a>
-  </nav>
-</header>
-
-<section class="page-hero">
-  <h1>Schedule a Free Consultation</h1>
-  <p>Tell us a bit about your goals—we’ll follow up to book a slot.</p>
-</section>
-
-<section class="section">
-  <form class="form" action="send_mail.php" method="POST">
-    <input type="hidden" name="form_name" value="Consultation"/>
-    <div class="grid-2">
-      <label>First Name
-        <input type="text" name="first_name" required/>
-      </label>
-      <label>Last Name
-        <input type="text" name="last_name" required/>
-      </label>
+  <header id="site-header" class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <img class="brand-mark" src="./logos/logo-Photoroom.png" alt="Nyxion Labs"/>
+        <span class="brand-name">Nyxion Labs</span>
+      </a>
+      <nav class="nav">
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+        <div id="navLinks" class="nav-links">
+          <a href="index.html#solutions">Solutions</a>
+          <a href="packages.html">Packages</a>
+          <a href="contact.html" class="btn btn-secondary">Contact</a>
+        </div>
+      </nav>
     </div>
-    <label>Email
-      <input type="email" name="email" required/>
-    </label>
-    <label>Message
-      <textarea name="message" required></textarea>
-    </label>
-    <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off"/>
-    <button type="submit" class="btn btn-primary btn-xl">Request Consultation</button>
-  </form>
-</section>
+  </header>
 
-<footer class="site-footer">
-  <div class="foot-links">
-    <a href="packages.html">Packages</a>
-    <a href="consultation.html">Consultation</a>
-    <a href="contact.html">Contact</a>
-  </div>
-  <div class="foot-copy">© 2025 Nyxion Labs</div>
-</footer>
+  <section class="page-hero">
+    <h1 class="reveal-words">Schedule a Free Consultation</h1>
+    <p class="fade-up">Tell us about your goals — we’ll follow up to book a slot and discuss your specific AI needs.</p>
+  </section>
+
+  <section class="section container">
+    <form class="form" action="send_mail.php" method="POST" novalidate>
+      <input type="hidden" name="form_name" value="Consultation"/>
+      <div class="grid-2">
+        <label>First Name
+          <input type="text" name="first_name" required/>
+        </label>
+        <label>Last Name
+          <input type="text" name="last_name" required/>
+        </label>
+      </div>
+      <label>Email Address
+        <input type="email" name="email" required/>
+      </label>
+      <label>Company Name
+        <input type="text" name="company" placeholder="Optional"/>
+      </label>
+      <label>Tell us about your project
+        <textarea name="message" placeholder="Describe your AI goals, current challenges, timeline, and any specific requirements..." required></textarea>
+      </label>
+      <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off"/>
+      <button type="submit" class="btn btn-primary">Request Free Consultation</button>
+    </form>
+  </section>
+
+  <footer class="site-footer">
+    <div class="foot-bottom">© 2025 Nyxion Labs</div>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
