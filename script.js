@@ -1,81 +1,67 @@
-// -------------------------
-// Mobile navigation toggle
-// -------------------------
-const navToggle = document.getElementById('navToggle');
-const navLinks = document.getElementById('navLinks');
-
-if (navToggle && navLinks) {
-  navToggle.addEventListener('click', () => {
-    const open = navLinks.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-}
-
-// -------------------------
-// Scroll animations
-// -------------------------
-const io = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((e) => {
-      if (e.isIntersecting) e.target.classList.add('animate');
+// === Nyxion Labs — Mobile and animation helpers (2025-09-23) ===
+(function(){
+  // Mobile nav toggle
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  if (toggle && links) {
+    toggle.addEventListener('click', () => {
+      const isOpen = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
     });
-  },
-  { threshold: 0.2 }
-);
-
-document.querySelectorAll('.fade-up, .banner').forEach((el) => io.observe(el));
-
-// -------------------------
-// Word reveal animation (fixes spacing issue)
-// -------------------------
-function setupWordReveal(el) {
-  const original = el.textContent.trim();
-  el.textContent = "";
-
-  // Split words but keep spaces
-  const parts = original.split(/(\s+)/);
-
-  parts.forEach((part, i) => {
-    if (/\s+/.test(part)) {
-      // Preserve actual spaces
-      el.appendChild(document.createTextNode(part));
-    } else if (part.length) {
-      const span = document.createElement("span");
-      span.className = "word";
-      span.style.setProperty("--i", i);
-      span.textContent = part;
-      el.appendChild(span);
-    }
-  });
-}
-
-document.querySelectorAll(".reveal-words").forEach(setupWordReveal);
-
-const ioWords = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((e) => {
-      if (e.isIntersecting) e.target.classList.add("animate");
+    // Close menu on link tap
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
     });
-  },
-  { threshold: 0.4 }
-);
+  }
 
-document.querySelectorAll(".reveal-words").forEach((el) =>
-  ioWords.observe(el)
-);
-
-// -------------------------
-// Header shadow on scroll
-// -------------------------
-const header = document.getElementById('site-header');
-if (header) {
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 4) {
-      header.style.boxShadow = 'var(--shadow)';
-      header.style.background = 'rgba(255,255,255,.96)';
-    } else {
-      header.style.boxShadow = 'none';
-      header.style.background = 'rgba(255,255,255,.9)';
-    }
+  // Split words for reveal
+  document.querySelectorAll('.reveal-words').forEach(el => {
+    if (el.dataset.enhanced) return;
+    const words = el.textContent.trim().split(/\s+/).map((w,i)=>`<span class="word" style="--i:${i}">${w}&nbsp;</span>`).join('');
+    el.innerHTML = words;
+    el.dataset.enhanced = '1';
   });
-}
+
+  // Intersection Observer for animations
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('animate');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.fade-up, .banner, .process-card, .reveal-words').forEach(el=>io.observe(el));
+
+  // iOS video: ensure playsinline is respected
+  document.querySelectorAll('video[autoplay]').forEach(v=>{
+    v.setAttribute('muted','');
+    v.setAttribute('playsinline','');
+  });
+})();
+(function () {
+  const toggle = document.getElementById('navToggle');
+  const links  = document.getElementById('navLinks');
+  if (!toggle || !links) return;
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  // Close menu after tapping a link
+  links.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+
+// 2) iOS: enforce inline video so it doesn’t push layout
+document.querySelectorAll('video[autoplay]').forEach(v => {
+  v.muted = true;
+  v.setAttribute('playsinline', '');
+});
