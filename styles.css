@@ -144,7 +144,7 @@ body{
   box-shadow: var(--shadow);
   transition: all .6s ease-out;
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(30px);
   max-width: 420px;
   z-index: 1;
 }
@@ -242,7 +242,8 @@ h1, h2, h3, h4, p, .stat-number, .stat-label { overflow-wrap: anywhere; }
 
 /* 7) Make top hero buttons wrap cleanly on phones */
 .hero-actions { flex-wrap: wrap; }
-.hero-actions .btn { flex: 1 1 auto; min-width: 180px; }
+.hero-actions .btn {   flex: 0 0 auto;
+  min-width: auto; }
 
 /* 8) Safer banner media sizing on small screens */
 @media (max-width: 980px) {
@@ -256,3 +257,565 @@ h1, h2, h3, h4, p, .stat-number, .stat-label { overflow-wrap: anywhere; }
 
 /* 10) Sticky header should never overlap opened menu */
 .site-header { position: sticky; top: 0; }
+
+.process-timeline > .process-card:nth-child(4){ /* counts .timeline-connector as first child */
+  margin-top:-24px !important;
+}
+@media (max-width: 820px){
+  .process-timeline > .process-card:nth-child(4){
+    margin-top:-14px !important;
+  }
+}
+
+/* ===== Packages Page ===== */
+
+/* Hero above the plans */
+.page-hero{
+  text-align:center;
+  padding:64px 0 24px;
+}
+.page-hero h1{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:40px;
+  line-height:1.1;
+  margin:0 0 8px;
+}
+.page-hero p{
+  color:#64748b;
+  max-width:720px;
+  margin:0 auto;
+}
+
+/* Plans grid */
+.plans{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  align-items:stretch;
+  margin:24px auto 72px;
+}
+@media (max-width: 1100px){
+  .plans{ grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width: 780px){
+  .plans{ grid-template-columns:1fr; }
+}
+
+/* Individual plan cards */
+.plan{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:24px;
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+.plan h3{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:22px;
+  margin:0 0 2px;
+}
+.plan .price{
+  font-size:32px;
+  font-weight:800;
+  color:var(--primary);
+  letter-spacing:-0.02em;
+}
+.plan .price span{
+  font-size:14px;
+  color:#64748b;
+  font-weight:700;
+}
+
+/* Features list */
+.plan .bullets{
+  list-style:none;
+  display:grid;
+  gap:8px;
+  color:#475569;
+  margin:6px 0 10px;
+  padding:0;
+}
+.plan .bullets li{
+  position:relative;
+  padding-left:22px;
+}
+.plan .bullets li::before{
+  content:'✓';
+  position:absolute;
+  left:0; top:0;
+  color:#10b981;
+  font-weight:900;
+}
+
+/* Plan actions: small, non-stretching buttons */
+.plan .btn{
+  align-self:flex-start;
+  flex:0 0 auto;
+  min-width:auto;
+  width:auto;
+}
+.plan .btn.btn-sm{
+  padding:8px 14px;
+  font-size:.95rem;
+}
+
+/* Emphasize a featured plan */
+.plan.featured{
+  border-color:var(--primary);
+  box-shadow:0 14px 40px rgba(37,99,235,.14);
+  transform:translateY(-2px);
+}
+@media (max-width:780px){
+  .plan.featured{ transform:none; }
+}
+
+/* Optional: show current page in nav as active */
+.nav-links a[href="packages.html"]{
+  color:var(--primary);
+  font-weight:700;
+}
+/* ===== Packages “What’s included” & prefooter CTA ===== */
+.included{
+  padding:32px 0 12px;
+  text-align:center;  /* ✅ center everything inside */
+}
+.included h2{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:28px;
+  margin:0 0 6px;
+}
+.included .sub{
+  color:#64748b;
+  margin:0 0 16px;
+}
+
+
+/* Comparison grid */
+.compare{border:1px solid var(--border);border-radius:14px;overflow:hidden;background:#fff}
+.compare-head,.compare-row{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:0;border-bottom:1px solid var(--border)
+}
+.compare-head{background:#0f172a;color:#e2e8f0;font-weight:700}
+.compare-head span,.compare-row span{padding:12px 14px;display:flex;align-items:center}
+.compare-row:nth-child(odd){background:#fafafa}
+
+/* Pre-footer CTA: fills the page so the footer isn't floating with empty space */
+.prefooter-cta{
+  background:linear-gradient(90deg,#3b82f6,#7c3aed);
+  color:#fff;
+  padding:42px 0;
+  margin-top:28px;
+  text-align:center;
+}
+.prefooter-cta .container{max-width:880px}
+.prefooter-cta h2{font-size:26px;margin:0 0 8px}
+.prefooter-cta p{opacity:.9;margin:0 0 14px}
+.prefooter-cta .btn{flex:0 0 auto;width:auto}
+
+/* Keep plan buttons compact and non-stretching */
+.plan .btn{flex:0 0 auto;min-width:auto;width:auto}
+
+
+/* ===== Contact page ===== */
+.contact-hero{padding:36px 0 10px}
+.contact-hero h1{font-family:'Space Grotesk',sans-serif;font-size:38px;margin:0 0 6px}
+.contact-hero p{color:#64748b;margin:0}
+.contact-quick{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--border);border-radius:999px;padding:8px 12px;text-decoration:none;color:#0f172a}
+.contact-grid{display:grid;grid-template-columns:2fr 1fr;gap:24px;margin:18px 0 48px}
+@media (max-width:980px){.contact-grid{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:20px;box-shadow:var(--shadow)}
+.card h2,.card h3{margin-top:0}
+.contact-form{display:grid;gap:14px}
+.contact-form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:720px){.contact-form .row{grid-template-columns:1fr}}
+.contact-form label{display:grid;gap:6px;font-weight:600}
+.contact-form input,.contact-form textarea{border:1px solid var(--border);border-radius:10px;padding:10px 12px;font:inherit}
+.contact-form .checkbox{display:flex;align-items:center;gap:8px;font-weight:500}
+.list{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+details{border-top:1px solid var(--border);padding:10px 0}
+details:first-of-type{border-top:0}
+summary{cursor:pointer;font-weight:700}
+
+.contact-main, .contact-aside{ display:grid; gap:20px; }
+@media (max-width:720px){ .contact-main, .contact-aside{ gap:16px; } }
+
+/* Fallback spacing if grid is overridden elsewhere */
+.contact-main .card + .card,
+.contact-aside .card + .card{ margin-top:16px; }
+
+
+/* === Nav polish: vertically center items and add header shadow === */
+.site-header{
+  box-shadow: 0 2px 12px rgba(2,6,23,.06);     /* clearer separation from page */
+}
+.header-inner{ min-height: 72px; }             /* consistent header height */
+
+.nav-links > a,
+.nav-links > .btn{
+  display:inline-flex;                         /* vertically centers text/icons */
+  align-items:center;
+  line-height:1;
+}
+
+/* Slightly reduce nav item padding so buttons don't sit lower */
+.nav-links a, .nav-links .btn{ padding-top:10px; padding-bottom:10px; }
+
+/* Keep the primary CTA aligned in the row */
+.nav-links .btn{ align-self:center; }
+.logo, .brand { display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text); font-weight:800; }
+.logo img, .brand-mark { height:40px; width:auto; display:block; border-radius:10px; object-fit:contain; }
+
+
+.process{ padding-bottom: 64px; }
+.process-timeline{ margin-bottom: 16px; }
+.process-timeline > .process-card:last-of-type{ margin-bottom: 20px; }
+
+@media (max-width: 820px){
+  .process{ padding-bottom: 48px; }
+}
+
+
+
+/* ===== Consultation page ===== */
+.consult-hero{padding:36px 0 14px;text-align:center}
+.consult-hero h1{font-family:'Space Grotesk',sans-serif;font-size:38px;margin:0 0 6px}
+.consult-hero p{color:#64748b;margin:0 0 10px}
+.badge-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:8px 0 12px}
+.badge{background:#eef2ff;color:#1e40af;border:1px solid #dbeafe;border-radius:999px;padding:6px 10px;font-weight:700;font-size:12px}
+.cta-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+
+.consult-grid{display:grid;grid-template-columns:1.25fr .95fr;gap:24px;margin:16px 0 40px}
+@media (max-width:1020px){ .consult-grid{grid-template-columns:1fr} }
+
+.consult-grid .card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:20px;box-shadow:var(--shadow)}
+.consult-grid .card.light{background:var(--surface)}
+
+.steps{margin:10px 0 0 18px;display:grid;gap:8px}
+.note{color:#475569;margin-top:10px}
+
+.list.compact{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.list.compact span{background:#fff;border:1px solid var(--border);border-radius:999px;padding:6px 10px;font-weight:600}
+
+.tiny{font-size:12px;color:#64748b;margin-top:8px}
+.right .card + .card{margin-top:16px}
+
+
+/* ===== Consultation spacing + list alignment fixes ===== */
+
+/* More space between the two columns and stacked cards */
+.consult .consult-grid { gap: 32px; }                      /* was ~24px */
+.consult .left .card + .card { margin-top: 18px; }
+.consult .right .card + .card { margin-top: 18px; }
+
+/* Make headings and content breathe inside each card */
+.consult .consult-grid .card h2,
+.consult .consult-grid .card h3 { margin: 0 0 8px; }
+
+/* Align "What you'll get" bullets cleanly */
+.consult .bullets{
+  list-style: disc outside;
+  padding-left: 20px;     /* align bullets and text */
+  margin: 6px 0 0;
+  display: block;         /* avoid grid/inline quirks */
+}
+.consult .bullets li{ margin: 6px 0; line-height: 1.6; }
+
+/* Fix "How the call works" numbering (the stray dot) */
+.consult .steps{
+  list-style: decimal outside;
+  padding-left: 22px;     /* space for the numbers */
+  margin: 10px 0 0;
+  display: block;         /* don't use grid so markers render properly */
+}
+.consult .steps li{ margin: 6px 0; line-height: 1.6; }
+
+
+
+
+/* === NAV TEXT NUDGE (lift a few pixels to center) === */
+@media (min-width: 981px){
+  .site-header .nav-links{
+    position: relative;
+    top: -5px;              /* tweak to -2px or -4px if needed on your display */
+  }
+}
+
+
+
+
+.site-footer .foot-bottom a{
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(255,255,255,.45);
+}
+.site-footer .foot-bottom a:hover{
+  opacity:.9;
+  border-bottom-color: rgba(255,255,255,.8);
+}
+
+/* Contact form: keep buttons from stretching full width */
+.contact-form button,
+.contact-form .btn{
+  width: auto !important;          /* no more full-width */
+  min-width: 140px;                /* optional: consistent small size */
+  display: inline-flex;
+  justify-self: start;             /* stop grid from stretching it */
+  align-self: start;
+}
+
+.contact-form .btn + .btn{
+  margin-left: 10px;               /* space between "Send" and secondary action */
+}
+
+
+/* ===== Sticky header + centered nav ===== */
+.site-header{
+  position: sticky;          /* stays at top while scrolling */
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  transition: box-shadow .2s ease, background-color .2s ease;
+}
+.site-header.is-stuck{
+  box-shadow: 0 10px 30px rgba(2,6,23,.08);
+  background: rgba(255,255,255,.98);
+}
+
+/* Center the whole row (logo + links + CTA) */
+.header-inner{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between;
+  min-height: 64px !important;
+}
+
+/* Center nav items perfectly */
+.nav-links{ display:flex; align-items:center; gap:28px; }
+.nav-links a,
+.nav-links .btn{
+  display:inline-flex; align-items:center;
+  height:40px; line-height:1; padding:0 12px;
+}
+
+/* Align the logo to the same center line */
+.brand, .brand .brand-mark{ display:inline-flex; align-items:center; height:40px; }
+.brand .brand-mark{ height:32px; width:auto; }
+
+/* Smooth in-page jumps when linking to #anchors under the sticky header */
+:target{ scroll-margin-top: 80px; }
+
+/* ===== Mobile nav polish (burger ⇄ X, backdrop, scroll lock) ===== */
+
+/* Turn the 3 bars into an X when active */
+.nav-toggle{ display:none; background:none; border:0; padding:6px 8px; cursor:pointer }
+.nav-toggle span{ display:block; width:26px; height:3px; background:#0f172a; border-radius:2px; margin:4px 0; transition:transform .18s ease, opacity .18s ease }
+@media (max-width:980px){ .nav-toggle{ display:block } }
+.nav-toggle.active span:nth-child(1){ transform: translateY(7px) rotate(45deg) }
+.nav-toggle.active span:nth-child(2){ opacity:0 }
+.nav-toggle.active span:nth-child(3){ transform: translateY(-7px) rotate(-45deg) }
+
+/* Lock scroll while menu is open */
+.nav-open{ overflow:hidden }
+
+/* Backdrop behind the mobile menu */
+#navBackdrop{
+  position:fixed; inset:0; background:rgba(2,6,23,.45);
+  opacity:0; pointer-events:none; transition:opacity .18s ease; z-index:1000;
+}
+#navBackdrop.show{ opacity:1; pointer-events:auto }
+
+/* Make the dropdown float above the backdrop (and viewport-fixed so it stays put) */
+@media (max-width:980px){
+  .nav-links{
+    position:fixed; top:70px; right:16px; left:16px;
+    z-index:1001; background:#fff; border:1px solid var(--border);
+    border-radius:14px; box-shadow:var(--shadow-lg);
+    padding:12px 14px; display:none; flex-direction:column; gap:10px;
+  }
+  .nav-links.open{ display:flex }
+  .nav-links .btn{ width:100%; justify-content:center }
+}
+
+
+
+/* ===== Mobile nav (works across pages) ===== */
+:root{ --header-h: 64px; }
+
+/* Burger icon */
+.nav-toggle{ display:none; background:none; border:0; padding:6px 8px; cursor:pointer }
+.nav-toggle span{ display:block; width:26px; height:3px; background:#0f172a; border-radius:2px; margin:4px 0; transition:transform .18s ease, opacity .18s ease }
+@media (max-width:980px){ .nav-toggle{ display:block } }
+.nav-toggle.active span:nth-child(1){ transform: translateY(7px) rotate(45deg) }
+.nav-toggle.active span:nth-child(2){ opacity:0 }
+.nav-toggle.active span:nth-child(3){ transform: translateY(-7px) rotate(-45deg) }
+
+/* Backdrop (always *below* the menu; clicks close it) */
+#navBackdrop{
+  position:fixed; inset:0; background:rgba(2,6,23,.45);
+  opacity:0; pointer-events:none; transition:opacity .18s ease;
+  z-index: 950; /* below header/menu */
+}
+
+/* Lock scroll when open */
+.nav-open{ overflow:hidden }
+
+/* Mobile dropdown menu panel */
+@media (max-width:980px){
+  .site-header{ position:sticky; top:0; z-index:1000; background:#fff; }
+  .nav-links{
+    position:fixed; top:var(--header-h); right:16px; left:16px;
+    display:none; flex-direction:column; gap:12px;
+    background:#fff; border:1px solid var(--border); border-radius:14px;
+    box-shadow:0 18px 50px rgba(2,6,23,.18); padding:12px 14px;
+    z-index: 1100; /* above backdrop */
+  }
+  .nav-links.open{ display:flex }
+  .nav-links .btn{ width:100%; justify-content:center }
+}
+
+/* Desktop alignment stays clean */
+@media (min-width:981px){
+  .header-inner{ display:flex; align-items:center; justify-content:space-between; min-height:64px; }
+  .nav-links{ display:flex; align-items:center; gap:28px; }
+  .nav-links a, .nav-links .btn{ display:inline-flex; align-items:center; height:40px; line-height:1; padding:0 12px; }
+  .brand, .brand .brand-mark{ display:inline-flex; align-items:center; height:40px; }
+  .brand .brand-mark{ height:32px; width:auto; }
+}
+
+/* Backdrop visible state */
+#navBackdrop.show{ opacity:1; pointer-events:auto }
+
+/* ===== Hot-fix: force reveal elements to be visible ===== */
+/* ===== Reveal animation (safe defaults) ===== */
+.reveal, .fade-up, .banner, .process-card {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .45s ease, transform .45s ease;
+  will-change: opacity, transform;
+}
+
+.in-view {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Users who prefer reduced motion see content immediately */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .fade-up, .banner, .process-card {
+    opacity: 1;
+    transform: none;
+  }
+}
+/* ===== Reveal compatibility + fallback (shows your boxes) ===== */
+
+/* Make either class name (.animate or .in-view) reveal the elements */
+.fade-up.in-view,
+.fade-up.animate,
+.banner.in-view,
+.banner.animate,
+.process-card.in-view,
+.process-card.animate{
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Keep the transitions smooth */
+.fade-up,
+.banner,
+.process-card{
+  will-change: opacity, transform;
+}
+
+/* If a user prefers reduced motion, show content immediately */
+@media (prefers-reduced-motion: reduce){
+  .fade-up, .banner, .process-card{
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+/* Subtle dim on the hero background video */
+.hero-video{
+  filter: brightness(0.68) contrast(1.02);
+}
+
+/* If you want just a hair darker, try 0.64; lighter, try 0.72 */
+
+
+
+
+/* Footer centering quick fix */
+.site-footer { background:#0b1326; }
+
+.site-footer .footer-top,
+.site-footer .footer-grid,
+.site-footer .foot-bottom{
+  max-width: 1120px;     /* match page width */
+  margin-left: auto;     /* center block */
+  margin-right: auto;
+  padding-left: 20px;    /* equal gutters */
+  padding-right: 20px;
+}
+/* === Full-bleed CTA + Footer (touch page edges) === */
+
+/* Make the background bars span the entire viewport width */
+.prefooter-cta,
+.site-footer{
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;     /* pull section to the left edge */
+  margin-right: -50vw;    /* pull section to the right edge */
+  width: 100vw;           /* full viewport width */
+  border-radius: 0 !important;   /* remove rounded corners */
+}
+
+/* Keep interior content neatly centered */
+.prefooter-cta .container,
+.site-footer .footer-grid,
+.site-footer .foot-bottom{
+  max-width: 1120px;      /* match your site width */
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Optional: ensure no stray outer margins are applied */
+.prefooter-cta{ margin-top: 0; margin-bottom: 0; }
+.site-footer{  margin-top: 0; }
+
+
+
+/* === Full-bleed fix for the CTA section (.cta) === */
+
+/* 1) Paint the gradient on a viewport-wide pseudo element */
+.cta{
+  position: relative;
+  z-index: 0;
+  border-radius: 0 !important;        /* remove rounded corners at edges */
+}
+.cta::before{
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  width: 100vw;                        /* span full viewport width */
+  transform: translateX(-50%);         /* center the bleed */
+  background: inherit;                 /* reuse .cta's gradient/background */
+  z-index: -1;                         /* sit behind content */
+}
+
+/* 2) Keep inner content aligned to your normal page width */
+.cta .container{
+  max-width: 1120px;                   /* match your site container */
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* 3) Safety: avoid horizontal scrollbars */
+html, body { overflow-x: hidden; }

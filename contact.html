@@ -2,69 +2,164 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact — Nyxion Labs</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Fonts + site CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css"/>
   <link rel="icon" type="image/png" href="./logos/icons/ms-icon-70x70.png"/>
+
+  <!-- Calendly (popup + inline embed) -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 <body>
-  <header id="site-header" class="site-header">
+  <!-- HEADER -->
+  <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="brand">
+      <a href="index.html" class="brand" aria-label="Nyxion Labs home">
         <img class="brand-mark" src="./logos/logo-Photoroom.png" alt="Nyxion Labs"/>
         <span class="brand-name">Nyxion Labs</span>
       </a>
-      <nav class="nav">
-        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navLinks">
-          <span></span><span></span><span></span>
-        </button>
-        <div id="navLinks" class="nav-links">
-          <a href="index.html#solutions">Solutions</a>
-          <a href="packages.html">Packages</a>
-          <a href="consultation.html" class="btn btn-primary">Free Consultation</a>
-        </div>
+      <nav>
+<button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+  <span></span><span></span><span></span>
+</button>
+
+<div id="navLinks" class="nav-links">
+  <a href="index.html#solutions">Solutions</a>
+  <a href="packages.html">Packages</a>
+  <a href="index.html#process">Process</a>
+  <a href="contact.html">Contact</a>
+  <a href="consultation.html" class="btn btn-primary btn-sm">Get Started</a>
+</div>
+
       </nav>
     </div>
   </header>
 
-  <section class="page-hero">
-    <h1 class="reveal-words">Contact Nyxion Labs</h1>
-    <p class="fade-up">We typically reply within one business day.</p>
-  </section>
-
-  <section class="section container">
-    <div class="grid-2">
-      <form class="form" action="send_mail.php" method="POST" novalidate>
-        <input type="hidden" name="form_name" value="Contact"/>
-        <label>Full Name
-          <input type="text" name="name" required/>
-        </label>
-        <label>Email
-          <input type="email" name="email" required/>
-        </label>
-        <label>Subject
-          <input type="text" name="subject" required/>
-        </label>
-        <label>Message
-          <textarea name="message" required></textarea>
-        </label>
-        <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off"/>
-        <button type="submit" class="btn btn-primary btn-xl">Send Message</button>
-      </form>
-
-      <div class="form">
-        <h3 style="margin-top:0">Reach us directly</h3>
-        <p>Email: <a href="mailto:info@nyxionlabs.com">info@nyxionlabs.com</a></p>
-        <p>Phone: <a href="tel:+923194070681">+92 319 407 0681</a></p>
-        <p>WhatsApp (text): <a href="https://wa.me/4915751096455" target="_blank" rel="noopener">+49 1575 1096455</a></p>
+  <!-- MAIN -->
+  <main class="container contact">
+    <section class="contact-hero">
+      <h1>Contact us</h1>
+      <p>Tell us what you’re building. We’ll reply within one business day.</p>
+      <div class="contact-quick">
+        <a class="chip" href="mailto:hello@nyxionlabs.com">hello@nyxionlabs.com</a>
+        <a class="chip" href="#" data-calendly="https://calendly.com/your-handle/free-consultation-20min">Book 20-min call</a>
+        <span class="chip">Avg. response: &lt;24h</span>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="contact-grid">
+      <!-- Left: form + FAQs -->
+      <div class="contact-main">
+        <div class="card">
+          <h2>Send us a message</h2>
+
+          <!-- FORM (redirects to thank-you.html / error.html) -->
+          <form id="contactForm" action="logic.php" method="POST" class="contact-form" novalidate>
+            <!-- Optional hints if your PHP reads them; JS also uses these -->
+            <input type="hidden" name="redirect_success" value="thank-you.html">
+            <input type="hidden" name="redirect_error" value="error.html">
+
+            <div class="row">
+              <label>Full name
+                <input name="name" type="text" placeholder="Jane Doe" required/>
+              </label>
+              <label>Email
+                <input name="email" type="email" placeholder="jane@company.com" required/>
+              </label>
+            </div>
+
+            <div class="row">
+              <label>Company
+                <input name="company" type="text" placeholder="Acme Inc."/>
+              </label>
+              <label>Role
+                <input name="role" type="text" placeholder="Head of Data"/>
+              </label>
+            </div>
+
+            <label>What can we help with?
+              <textarea name="message" rows="6" placeholder="Briefly describe your use case or project…"></textarea>
+            </label>
+
+            <div class="row">
+              <label class="checkbox">
+                <input type="checkbox" name="nda"/> I’d like to sign an NDA
+              </label>
+            </div>
+
+            <!-- Inline messages (JS redirects anyway; kept for progressive enhancement) -->
+            <p class="form-success" hidden>Thanks — your message is in. We’ll reply within 24 hours.</p>
+            <p class="form-error" hidden>Sorry, something went wrong. Please email <a href="mailto:info@nyxionlabs.com">info@nyxionlabs.com</a>.</p>
+
+            <button type="submit" class="btn btn-primary btn-sm">Send message</button>
+            <a href="#" class="btn btn-outline btn-sm" data-calendly="https://calendly.com/your-handle/free-consultation-20min">Or book a quick call</a>
+          </form>
+        </div>
+
+        <!-- FAQ -->
+        <div class="card">
+          <h2>FAQs</h2>
+          <details open>
+            <summary>How soon can we start?</summary>
+            <p>Discovery can start this week. Pilots usually kick off in 1–2 weeks depending on access.</p>
+          </details>
+          <details>
+            <summary>Do you work with our cloud &amp; security stack?</summary>
+            <p>Yes. We support Azure, AWS, GCP, SSO/RBAC, private LLMs, and on-prem deployments.</p>
+          </details>
+          <details>
+            <summary>Can you integrate our data?</summary>
+            <p>We connect to databases, warehouses, APIs, and documents. We’ll pick the fastest path to value.</p>
+          </details>
+        </div>
+      </div>
+
+      <!-- Right: contact cards + Calendly -->
+      <aside class="contact-aside">
+        <div class="card">
+          <h3>Talk to a human</h3>
+          <p>No SDRs—your message goes to an engineer or consultant.</p>
+          <ul class="list">
+            <li><strong>Email:</strong> hello@nyxionlabs.com</li>
+            <li><strong>Hours:</strong> Mon–Fri, 9am–6pm PT</li>
+            <li><strong>Location:</strong> Remote • San Francisco, CA</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Pick a time</h3>
+          <div class="calendly-inline-widget" data-url="https://calendly.com/your-handle/free-consultation-20min" style="min-width:260px;height:660px;"></div>
+        </div>
+      </aside>
+    </section>
+  </main>
 
   <footer class="site-footer">
-    <div class="foot-bottom">© 2025 Nyxion Labs</div>
+    <div class="container footer-grid">
+      <div>
+        <h3>Nyxion Labs</h3>
+        <p>Applied AI solutions for automation, assistants, analytics, and cloud ecosystems.</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#solutions">Solutions</a>
+        <a href="#process">How We Work</a>
+        <a href="contact.html">Contact</a>
+        <a href="consultation.html">Free Consultation</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:info@nyxionlabs.com">info@nyxionlabs.com</a>
+        <a href="tel:+923194070681">+92 319 407 0681</a>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2025 Nyxion Labs. All rights reserved.</div>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>

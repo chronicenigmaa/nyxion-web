@@ -2,65 +2,146 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Schedule a Free Consultation — Nyxion Labs</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Free Consultation — Nyxion Labs</title>
+
+  <!-- Fonts + site CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css"/>
-  <link rel="icon" type="image/png" href="./logos/icons/ms-icon-70x70.png"/>
+   <link rel="icon" type="image/png" href="./logos/logo-Photoroom.png" />
+
+  <!-- Calendly assets (keeps popup + inline embed working) -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 <body>
-  <header id="site-header" class="site-header">
+  <!-- Header -->
+  <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="brand">
+      <a href="index.html" class="brand" aria-label="Nyxion Labs home">
         <img class="brand-mark" src="./logos/logo-Photoroom.png" alt="Nyxion Labs"/>
         <span class="brand-name">Nyxion Labs</span>
       </a>
-      <nav class="nav">
-        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navLinks">
-          <span></span><span></span><span></span>
-        </button>
-        <div id="navLinks" class="nav-links">
-          <a href="index.html#solutions">Solutions</a>
-          <a href="packages.html">Packages</a>
-          <a href="contact.html" class="btn btn-secondary">Contact</a>
-        </div>
+      <nav>
+<button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+  <span></span><span></span><span></span>
+</button>
+
+<div id="navLinks" class="nav-links">
+  <a href="index.html#solutions">Solutions</a>
+  <a href="packages.html">Packages</a>
+  <a href="index.html#process">Process</a>
+  <a href="contact.html">Contact</a>
+  <a href="consultation.html" class="btn btn-primary btn-sm">Get Started</a>
+</div>
+
       </nav>
     </div>
   </header>
 
-  <section class="page-hero">
-    <h1 class="reveal-words">Schedule a Free Consultation</h1>
-    <p class="fade-up">Tell us about your goals — we’ll follow up to book a slot and discuss your specific AI needs.</p>
-  </section>
+  <main class="container consult">
+    <!-- Hero -->
+    <section class="consult-hero">
+      <h1>Book a free 20-minute consultation</h1>
+      <p>Get fast, actionable guidance on the smartest first step for AI in your team.</p>
 
-  <section class="section container">
-    <form class="form" action="send_mail.php" method="POST" novalidate>
-      <input type="hidden" name="form_name" value="Consultation"/>
-      <div class="grid-2">
-        <label>First Name
-          <input type="text" name="first_name" required/>
-        </label>
-        <label>Last Name
-          <input type="text" name="last_name" required/>
-        </label>
+      <div class="badge-row">
+        <span class="badge">No sales pitch</span>
+        <span class="badge">Action plan in 24h</span>
+        <span class="badge">Security-first</span>
       </div>
-      <label>Email Address
-        <input type="email" name="email" required/>
-      </label>
-      <label>Company Name
-        <input type="text" name="company" placeholder="Optional"/>
-      </label>
-      <label>Tell us about your project
-        <textarea name="message" placeholder="Describe your AI goals, current challenges, timeline, and any specific requirements..." required></textarea>
-      </label>
-      <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off"/>
-      <button type="submit" class="btn btn-primary">Request Free Consultation</button>
-    </form>
-  </section>
+
+      <div class="cta-row">
+        <a href="#" class="btn btn-primary btn-sm"
+           data-calendly="https://calendly.com/your-handle/free-consultation-20min">
+          Request Free Consultation
+        </a>
+        <a href="mailto:hello@nyxionlabs.com" class="btn btn-white btn-sm">Prefer email?</a>
+      </div>
+    </section>
+
+    <!-- Two-column content -->
+    <section class="consult-grid">
+      <div class="left">
+        <div class="card">
+          <h2>What you’ll get</h2>
+          <ul class="bullets">
+            <li>Quick assessment of your use case & data readiness</li>
+            <li>Recommended approach & architecture</li>
+            <li>High-level timeline, effort, and cost ranges</li>
+            <li>Risk, security, and governance checklist</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>How the call works</h2>
+          <ol class="steps">
+            <li><strong>Context (5m):</strong> Goals, stakeholders, constraints.</li>
+            <li><strong>Deep dive (10m):</strong> Data sources, workflows, guardrails.</li>
+            <li><strong>Next steps (5m):</strong> Options to pilot, build, or evaluate.</li>
+          </ol>
+          <p class="note">After the call you’ll receive a short written summary with concrete next steps.</p>
+        </div>
+
+        <div class="card light">
+          <h3>Trusted by teams who ship</h3>
+          <p>We design and operate production systems with uptime, observability, and cost controls.</p>
+          <div class="list compact">
+            <span>Assistants & copilots</span>
+            <span>Automation & RPA</span>
+            <span>Analytics & dashboards</span>
+            <span>Private model hosting</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="right">
+        <div class="card">
+          <h2>Pick a time</h2>
+          <div class="calendly-inline-widget"
+               data-url="https://calendly.com/your-handle/free-consultation-20min"
+               style="min-width:260px;height:760px;"></div>
+          <p class="tiny">
+            Having trouble? <a href="#"
+              data-calendly="https://calendly.com/your-handle/free-consultation-20min">Open the popup</a>.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Rather write it up?</h3>
+          <p>Email us at <a href="mailto:info@nyxionlabs.com">info@nyxionlabs.com</a> with a few lines about your goals.</p>
+        </div>
+      </aside>
+    </section>
+  </main>
 
   <footer class="site-footer">
-    <div class="foot-bottom">© 2025 Nyxion Labs</div>
+    <div class="container footer-grid">
+      <div>
+        <h3>Nyxion Labs</h3>
+        <p>Applied AI solutions for automation, assistants, analytics, and cloud ecosystems.</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#solutions">Solutions</a>
+        <a href="#process">How We Work</a>
+        <a href="contact.html">Contact</a>
+        <a href="consultation.html">Free Consultation</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:info@nyxionlabs.com">info@nyxionlabs.com</a>
+        <a href="tel:+923194070681">+92 319 407 0681</a>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2025 Nyxion Labs. All rights reserved.</div>
   </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+  <!-- Site JS (already wires up [data-calendly] clicks) -->
   <script src="script.js"></script>
 </body>
 </html>

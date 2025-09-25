@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Packages — Nyxion Labs</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css"/>
-  <link rel="icon" type="image/png" href="./logos/icons/ms-icon-70x70.png"/>
+   <link rel="icon" type="image/png" href="./logos/logo-Photoroom.png" />
 </head>
 <body>
+  <!-- HEADER -->
   <header id="site-header" class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="brand">
@@ -16,63 +17,168 @@
         <span class="brand-name">Nyxion Labs</span>
       </a>
       <nav class="nav">
-        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navLinks">
-          <span></span><span></span><span></span>
-        </button>
-        <div id="navLinks" class="nav-links">
-          <a href="index.html#solutions">Solutions</a>
-          <a href="contact.html" class="btn btn-contact">Contact</a>
-          <a href="consultation.html" class="btn btn-primary">Free Consultation</a>
-        </div>
+<button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+  <span></span><span></span><span></span>
+</button>
+
+<div id="navLinks" class="nav-links">
+  <a href="index.html#solutions">Solutions</a>
+  <a href="packages.html">Packages</a>
+  <a href="index.html#process">Process</a>
+  <a href="contact.html">Contact</a>
+  <a href="consultation.html" class="btn btn-primary btn-sm">Get Started</a>
+</div>
+
       </nav>
     </div>
   </header>
 
+  <!-- HERO -->
   <section class="page-hero">
     <h1 class="reveal-words">Packages</h1>
-    <p class="fade-up">Transparent pricing with room to grow.</p>
+    <p class="fade-up">Choose a bundle that matches your stage. Upgrade anytime as your needs grow.</p>
   </section>
 
-  <section class="section container">
-    <div class="plans">
-      <div class="plan fade-up">
-        <h3>Starter</h3>
-        <div class="price">$799 <span>/ project</span></div>
-        <ul class="bullets">
-          <li>Discovery & data review</li>
-          <li>1 dashboard or small ML model</li>
-          <li>Email support</li>
-        </ul>
-        <a href="consultation.html" class="btn btn-primary">Call for Consultation</a>
+  <!-- PLANS -->
+  <section class="plans container">
+    <!-- STARTER -->
+    <div class="plan fade-up">
+      <h3>Starter</h3>
+      <div class="price">$799 <span>/ project</span></div>
+      <ul class="bullets">
+        <li>Opportunity mapping (1 workshop)</li>
+        <li>One assistant/automation or dashboard</li>
+        <li>Basic data integration (CSV / Google Sheet)</li>
+        <li>Security baseline & PII handling</li>
+        <li>Email support (business hours)</li>
+      </ul>
+      <a href="consultation.html" class="btn btn-primary btn-sm">Book Call</a>
+    </div>
+
+    <!-- PROFESSIONAL -->
+           <div class="plan popular">
+  <span class="ribbon">Most popular</span>
+    <div class="plan featured fade-up">
+
+ 
+      <h3>Professional</h3>
+      <div class="price">$2,499 <span>/ month</span></div>
+      <ul class="bullets">
+        <li>Everything in <b>Starter</b>, plus:</li>
+        <li>3–5 use cases (assistants, automations, dashboards)</li>
+        <li>Private model hosting & vector DB</li>
+        <li>Azure/AWS setup, SSO & RBAC</li>
+        <li>Analytics, observability & cost tracking</li>
+        <li>Weekly check-ins & Slack support</li>
+      </ul>
+      <a href="consultation.html" class="btn btn-primary btn-sm">Book Call</a>
+    </div>
+    </div>
+
+    <!-- ENTERPRISE -->
+    <div class="plan fade-up">
+      <h3>Enterprise</h3>
+      <div class="price">Custom</div>
+      <ul class="bullets">
+        <li>Everything in <b>Professional</b>, plus:</li>
+        <li>On-prem / private cloud deployment</li>
+        <li>Advanced governance & audit logging</li>
+        <li>Role-based data access & policy enforcement</li>
+        <li>Uptime SLAs & 24/7 on-call support</li>
+        <li>Multi-team rollout & enablement</li>
+      </ul>
+      <a href="consultation.html" class="btn btn-primary btn-sm">Book Call</a>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED (fills the “empty” area with real value) -->
+  <section class="container included">
+    <h2>What’s included</h2>
+    <p class="sub">A quick comparison of the most-asked-about capabilities.</p>
+
+    <div class="compare">
+      <div class="compare-head">
+        <span>Capability</span>
+        <span>Starter</span>
+        <span>Professional</span>
+        <span>Enterprise</span>
       </div>
 
-      <div class="plan featured fade-up">
-        <h3>Professional</h3>
-        <div class="price">$2,499 <span>/ month</span></div>
-        <ul class="bullets">
-          <li>3–5 use cases (ML/DL/Dashboards)</li>
-          <li>Azure setup & SSO/RBAC</li>
-          <li>Weekly check-ins</li>
-        </ul>
-        <a href="consultation.html" class="btn btn-primary">Call for Consultation</a>
+      <div class="compare-row">
+        <span>Use cases per engagement</span>
+        <span>1</span>
+        <span>3–5</span>
+        <span>Program-level</span>
       </div>
 
-      <div class="plan fade-up">
-        <h3>Enterprise</h3>
-        <div class="price">Custom</div>
-        <ul class="bullets">
-          <li>On-prem/private cloud</li>
-          <li>SLAs & 24/7 support</li>
-          <li>Multi-team rollout</li>
-        </ul>
-        <a href="consultation.html" class="btn btn-primary">Call for Consultation</a>
+      <div class="compare-row">
+        <span>Data integration</span>
+        <span>CSV / Sheets</span>
+        <span>DB + APIs</span>
+        <span>Hybrid / On-prem</span>
+      </div>
+
+      <div class="compare-row">
+        <span>Model hosting</span>
+        <span>Shared</span>
+        <span>Private</span>
+        <span>Private / On-prem</span>
+      </div>
+
+      <div class="compare-row">
+        <span>Security & governance</span>
+        <span>Baseline</span>
+        <span>SSO, RBAC, audit</span>
+        <span>Fine-grained policy + DLP</span>
+      </div>
+
+      <div class="compare-row">
+        <span>Support</span>
+        <span>Email</span>
+        <span>Slack + weekly</span>
+        <span>24/7 + SLAs</span>
+      </div>
+
+      <div class="compare-row">
+        <span>Analytics & cost controls</span>
+        <span>Basic</span>
+        <span>Dashboards & budgets</span>
+        <span>Org-wide FinOps</span>
       </div>
     </div>
   </section>
 
+  <!-- PRE-FOOTER CTA (prevents the footer from feeling “empty”) -->
+  <section class="prefooter-cta">
+    <div class="container">
+      <h2>Not sure which package fits?</h2>
+      <p>We’ll help you scope the highest-ROI starting point and plan the path to scale.</p>
+      <a href="consultation.html" class="btn btn-white btn-sm">Free 20-min Consultation</a>
+    </div>
+  </section>
+
   <footer class="site-footer">
-    <div class="foot-bottom">© 2025 Nyxion Labs</div>
+    <div class="container footer-grid">
+      <div>
+        <h3>Nyxion Labs</h3>
+        <p>Applied AI solutions for automation, assistants, analytics, and cloud ecosystems.</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#solutions">Solutions</a>
+        <a href="#process">How We Work</a>
+        <a href="contact.html">Contact</a>
+        <a href="consultation.html">Free Consultation</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:info@nyxionlabs.com">info@nyxionlabs.com</a>
+        <a href="tel:+923194070681">+92 319 407 0681</a>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2025 Nyxion Labs. All rights reserved.</div>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
