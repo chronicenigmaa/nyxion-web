@@ -188,3 +188,4 @@ const CALENDLY_FALLBACK_URL = 'https://calendly.com/your-handle/free-consultatio
 
   targets.forEach(el => io.observe(el));
 })();
+
