@@ -821,3 +821,51 @@ summary{cursor:pointer;font-weight:700}
 html, body { overflow-x: hidden; }
 
 
+/* === Navbar brand size bump (logo + wordmark) === */
+.site-header .brand {
+  gap: 12px;
+}
+
+.site-header .brand-mark {
+  width: 56px !important;   /* was ~32–40px in your CSS */
+  height: 56px !important;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+.site-header .brand-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 800;
+  font-size: clamp(20px, 2.2vw, 26px); /* larger on desktop, sensible on laptop */
+  line-height: 1.1;
+}
+
+/* Ensure header is tall enough + centered */
+.site-header .header-inner {
+  min-height: 86px !important;
+  align-items: center !important;
+}
+
+/* Keep nav items vertically centered next to the larger brand */
+.nav-links a,
+.nav-links .btn {
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  line-height: 1;
+  padding: 0 12px;
+}
+
+/* Responsive: slightly reduce on mobile so the row doesn't overflow */
+@media (max-width: 980px) {
+  .site-header .brand-mark {
+    width: 44px !important;
+    height: 44px !important;
+  }
+  .site-header .brand-name {
+    font-size: 20px;
+  }
+  .site-header .header-inner {
+    min-height: 72px !important;
+  }
+}
