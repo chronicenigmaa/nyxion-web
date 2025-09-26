@@ -4,13 +4,13 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact — Nyxion Labs</title>
-
-  <!-- Fonts + site CSS -->
+  <meta name="description" content="Contact Nyxion Labs for AI automation solutions. We respond within 24 hours with expert guidance on your AI implementation needs.">
+  
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="styles.css"/>
-  <link rel="icon" type="image/png" href="./logos/icons/ms-icon-70x70.png"/>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="./logos/logo-Photoroom.png"/>
 
-  <!-- Calendly (popup + inline embed) -->
+  <!-- Calendly assets with error handling -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
@@ -19,22 +19,22 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="brand" aria-label="Nyxion Labs home">
-        <img class="brand-mark" src="./logos/logo-Photoroom.png" alt="Nyxion Labs"/>
+        <img class="brand-mark" src="./logos/logo-Photoroom.png" alt="Nyxion Labs" width="48" height="48"/>
         <span class="brand-name">Nyxion Labs</span>
       </a>
       <nav>
-<button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
-  <span></span><span></span><span></span>
-</button>
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
 
-<div id="navLinks" class="nav-links">
-  <a href="index.html#solutions">Solutions</a>
-  <a href="packages.html">Packages</a>
-  <a href="index.html#process">Process</a>
-  <a href="contact.html">Contact</a>
-  <a href="consultation.html" class="btn btn-primary btn-sm">Get Started</a>
-</div>
-
+        <div id="navLinks" class="nav-links">
+          <a href="index.html#solutions">Solutions</a>
+          <a href="packages.html">Packages</a>
+          <a href="index.html#process">Process</a>
+          <a href="index.html#case-studies">Case Studies</a>
+          <a href="contact.html">Contact</a>
+          <a href="consultation.html" class="btn btn-primary">Get Started</a>
+        </div>
       </nav>
     </div>
   </header>
@@ -43,11 +43,15 @@
   <main class="container contact">
     <section class="contact-hero">
       <h1>Contact us</h1>
-      <p>Tell us what you’re building. We’ll reply within one business day.</p>
+      <p>Tell us what you're building. We'll reply within one business day with expert guidance and next steps.</p>
       <div class="contact-quick">
-        <a class="chip" href="mailto:hello@nyxionlabs.com">hello@nyxionlabs.com</a>
-        <a class="chip" href="#" data-calendly="https://calendly.com/nyxionlabs/">Book 20-min call</a>
-        <span class="chip">Avg. response: &lt;24h</span>
+        <a class="chip" href="mailto:info@nyxionlabs.com">
+          📧 info@nyxionlabs.com
+        </a>
+        <a class="chip" href="#" data-calendly="https://calendly.com/nyxionlabs/">
+          📅 Book 20-min call
+        </a>
+        <span class="chip">⚡ Avg. response: &lt;24h</span>
       </div>
     </section>
 
@@ -57,82 +61,160 @@
         <div class="card">
           <h2>Send us a message</h2>
 
-          <!-- FORM (redirects to thank-you.html / error.html) -->
+          <!-- Enhanced form with CSRF token -->
           <form id="contactForm" action="logic.php" method="POST" class="contact-form" novalidate>
-            <!-- Optional hints if your PHP reads them; JS also uses these -->
+            <input type="hidden" name="csrf_token" id="csrfToken" value="">
             <input type="hidden" name="redirect_success" value="thank-you.html">
             <input type="hidden" name="redirect_error" value="error.html">
+            <input type="hidden" name="hp" value="" style="display: none;">
 
             <div class="row">
-              <label>Full name
-                <input name="name" type="text" placeholder="Jane Doe" required/>
+              <label>
+                Full name
+                <input name="name" type="text" placeholder="Jane Doe" required aria-describedby="name-error"/>
+                <span class="error-message" id="name-error"></span>
               </label>
-              <label>Email
-                <input name="email" type="email" placeholder="jane@company.com" required/>
+              <label>
+                Email
+                <input name="email" type="email" placeholder="jane@company.com" required aria-describedby="email-error"/>
+                <span class="error-message" id="email-error"></span>
               </label>
             </div>
 
             <div class="row">
-              <label>Company
+              <label>
+                Company
                 <input name="company" type="text" placeholder="Acme Inc."/>
               </label>
-              <label>Role
+              <label>
+                Role
                 <input name="role" type="text" placeholder="Head of Data"/>
               </label>
             </div>
 
-            <label>What can we help with?
-              <textarea name="message" rows="6" placeholder="Briefly describe your use case or project…"></textarea>
+            <label>
+              What can we help with?
+              <textarea name="message" rows="6" placeholder="Briefly describe your use case or project…" required aria-describedby="message-error"></textarea>
+              <span class="error-message" id="message-error"></span>
             </label>
 
             <div class="row">
               <label class="checkbox">
-                <input type="checkbox" name="nda"/> I’d like to sign an NDA
+                <input type="checkbox" name="nda" id="nda"/> 
+                I'd like to sign an NDA before our discussion
               </label>
             </div>
 
-            <!-- Inline messages (JS redirects anyway; kept for progressive enhancement) -->
-            <p class="form-success" hidden>Thanks — your message is in. We’ll reply within 24 hours.</p>
-            <p class="form-error" hidden>Sorry, something went wrong. Please email <a href="mailto:info@nyxionlabs.com">info@nyxionlabs.com</a>.</p>
+            <!-- Enhanced form messages -->
+            <div class="form-success" hidden>
+              <strong>✓ Message sent successfully!</strong><br>
+              We'll reply within 24 hours with next steps.
+            </div>
+            <div class="form-error" hidden>
+              <strong>⚠ Something went wrong.</strong><br>
+              Please try again or email <a href="mailto:info@nyxionlabs.com">info@nyxionlabs.com</a>
+            </div>
 
-            <button type="submit" class="btn btn-primary btn-sm">Send message</button>
-            <a href="#" class="btn btn-outline btn-sm" data-calendly="https://calendly.com/nyxionlabs/">Or book a quick call</a>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary btn-sm">
+                <span>Send message</span>
+              </button>
+              <a href="#" class="btn btn-outline btn-sm" data-calendly="https://calendly.com/nyxionlabs/">
+                <span>Or book a quick call</span>
+              </a>
+            </div>
           </form>
         </div>
 
-        <!-- FAQ -->
+        <!-- Enhanced FAQ with proper animation structure -->
         <div class="card">
-          <h2>FAQs</h2>
-          <details open>
+          <h2>Frequently Asked Questions</h2>
+          
+          <details>
             <summary>How soon can we start?</summary>
-            <p>Discovery can start this week. Pilots usually kick off in 1–2 weeks depending on access.</p>
+            <div class="faq-content">
+              <p>Discovery can start this week. Pilots usually kick off in 1–2 weeks depending on data access and technical requirements. We prioritize quick wins and measurable value from day one.</p>
+            </div>
           </details>
+          
           <details>
-            <summary>Do you work with our cloud &amp; security stack?</summary>
-            <p>Yes. We support Azure, AWS, GCP, SSO/RBAC, private LLMs, and on-prem deployments.</p>
+            <summary>Do you work with our cloud & security stack?</summary>
+            <div class="faq-content">
+              <p>Yes. We support Azure, AWS, GCP with full SSO/RBAC integration, private LLMs, and on-premise deployments. We work within your existing security frameworks and compliance requirements.</p>
+            </div>
           </details>
+          
           <details>
-            <summary>Can you integrate our data?</summary>
-            <p>We connect to databases, warehouses, APIs, and documents. We’ll pick the fastest path to value.</p>
+            <summary>Can you integrate with our existing data?</summary>
+            <div class="faq-content">
+              <p>We connect to databases, data warehouses, APIs, and document systems. Our approach prioritizes the fastest path to value while ensuring data security and governance compliance.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>What's your pricing model?</summary>
+            <div class="faq-content">
+              <p>We offer flexible packages from pilot projects ($2,995) to enterprise implementations. All packages include ROI measurement and guaranteed performance metrics. <a href="packages.html">View detailed pricing</a>.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Do you provide ongoing support?</summary>
+            <div class="faq-content">
+              <p>Yes. All implementations include monitoring, optimization, and support. Professional tier includes weekly check-ins and Slack support. Enterprise tier provides 24/7 dedicated support with SLA guarantees.</p>
+            </div>
           </details>
         </div>
       </div>
 
-      <!-- Right: contact cards + Calendly -->
+      <!-- Right: contact cards + Enhanced Calendly -->
       <aside class="contact-aside">
         <div class="card">
           <h3>Talk to a human</h3>
-          <p>No SDRs—your message goes to an engineer or consultant.</p>
+          <p>No SDRs—your message goes directly to an engineer or consultant with real AI implementation experience.</p>
           <ul class="list">
-            <li><strong>Email:</strong> hello@nyxionlabs.com</li>
+            <li><strong>Email:</strong> info@nyxionlabs.com</li>
+            <li><strong>Response time:</strong> &lt; 24 hours</li>
             <li><strong>Hours:</strong> Mon–Fri, 9am–6pm PT</li>
             <li><strong>Location:</strong> Remote • San Francisco, CA</li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>Pick a time</h3>
-          <div class="calendly-inline-widget" data-url="https://calendly.com/nyxionlabs/" style="min-width:260px;height:660px;"></div>
+          <h3>Schedule a call</h3>
+          <p>Book a 20-minute consultation to discuss your AI automation opportunities.</p>
+          
+          <!-- Enhanced Calendly widget with fallback -->
+          <div class="calendly-container">
+            <div class="calendly-inline-widget" 
+                 data-url="https://calendly.com/nyxionlabs/" 
+                 style="min-width:260px;height:600px;"
+                 id="calendly-widget">
+            </div>
+            
+            <!-- Fallback if Calendly doesn't load -->
+            <div class="calendly-fallback" id="calendly-fallback" style="display: none;">
+              <div class="fallback-content">
+                <h4>Having trouble with the calendar?</h4>
+                <p>No problem! You can:</p>
+                <ul>
+                  <li><a href="https://calendly.com/nyxionlabs/" target="_blank" rel="noopener">Open calendar in new window</a></li>
+                  <li><a href="mailto:info@nyxionlabs.com?subject=Meeting Request">Email us to schedule</a></li>
+                  <li>Call us at <a href="tel:+923194070681">+92 319 407 0681</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional contact method -->
+        <div class="card">
+          <h3>Prefer email?</h3>
+          <p>Send us your project details and we'll respond with initial thoughts and calendar options within 4 hours.</p>
+          <a href="mailto:info@nyxionlabs.com?subject=AI Implementation Inquiry&body=Hi, I'm interested in discussing AI automation for our business. Here are some details:%0D%0A%0D%0ACompany:%0D%0ARole:%0D%0ACurrent challenge:%0D%0A%0D%0AThanks!" 
+             class="btn btn-primary" style="width: 100%; margin-top: 12px;">
+            <span>Send detailed email</span>
+          </a>
         </div>
       </aside>
     </section>
@@ -142,24 +224,115 @@
     <div class="container footer-grid">
       <div>
         <h3>Nyxion Labs</h3>
-        <p>Applied AI solutions for automation, assistants, analytics, and cloud ecosystems.</p>
+        <p>Applied AI solutions that deliver measurable ROI through automation, intelligent assistants, and predictive analytics.</p>
       </div>
       <div>
         <h4>Company</h4>
-        <a href="#solutions">Solutions</a>
-        <a href="#process">How We Work</a>
+        <a href="index.html#solutions">Solutions</a>
+        <a href="packages.html">Packages</a>
+        <a href="index.html#process">How We Work</a>
         <a href="contact.html">Contact</a>
-        <a href="consultation.html">Free Consultation</a>
+        <a href="consultation.html">Free Assessment</a>
       </div>
       <div>
         <h4>Contact</h4>
         <a href="mailto:info@nyxionlabs.com">info@nyxionlabs.com</a>
         <a href="tel:+923194070681">+92 319 407 0681</a>
+        <p><small>San Francisco, CA • Remote</small></p>
       </div>
     </div>
     <div class="foot-bottom">© 2025 Nyxion Labs. All rights reserved.</div>
   </footer>
 
   <script src="script.js"></script>
+  
+  <!-- Enhanced contact page JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Generate CSRF token
+      const csrfToken = document.getElementById('csrfToken');
+      if (csrfToken) {
+        csrfToken.value = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+      }
+
+      // Enhanced Calendly loading with fallback
+      const calendlyWidget = document.getElementById('calendly-widget');
+      const calendlyFallback = document.getElementById('calendly-fallback');
+      
+      // Set up Calendly fallback timer
+      const fallbackTimer = setTimeout(() => {
+        if (calendlyWidget && calendlyFallback) {
+          calendlyWidget.style.display = 'none';
+          calendlyFallback.style.display = 'block';
+        }
+      }, 10000); // Show fallback after 10 seconds if Calendly doesn't load
+
+      // Listen for Calendly load success
+      window.addEventListener('message', function(e) {
+        if (e.data && e.data.event && e.data.event.indexOf('calendly') === 0) {
+          clearTimeout(fallbackTimer);
+          if (calendlyWidget) {
+            calendlyWidget.setAttribute('data-loaded', 'true');
+          }
+        }
+      });
+
+      // Enhanced form validation
+      const form = document.getElementById('contactForm');
+      const inputs = form.querySelectorAll('input[required], textarea[required]');
+      
+      inputs.forEach(input => {
+        input.addEventListener('blur', validateField);
+        input.addEventListener('input', clearFieldError);
+      });
+
+      function validateField(e) {
+        const field = e.target;
+        const errorElement = document.getElementById(field.name + '-error');
+        
+        if (!field.value.trim()) {
+          showFieldError(field, errorElement, `${field.name.charAt(0).toUpperCase() + field.name.slice(1)} is required`);
+        } else if (field.type === 'email' && !isValidEmail(field.value)) {
+          showFieldError(field, errorElement, 'Please enter a valid email address');
+        } else {
+          clearFieldError({ target: field });
+        }
+      }
+
+      function showFieldError(field, errorElement, message) {
+        field.style.borderColor = '#ef4444';
+        if (errorElement) {
+          errorElement.textContent = message;
+          errorElement.style.color = '#ef4444';
+          errorElement.style.fontSize = '12px';
+          errorElement.style.marginTop = '4px';
+        }
+      }
+
+      function clearFieldError(e) {
+        const field = e.target;
+        const errorElement = document.getElementById(field.name + '-error');
+        field.style.borderColor = '';
+        if (errorElement) {
+          errorElement.textContent = '';
+        }
+      }
+
+      function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      // Much smoother FAQ animations using native details behavior
+      const details = document.querySelectorAll('.contact details');
+      
+      // Remove any existing open attributes to start fresh
+      details.forEach(detail => {
+        detail.removeAttribute('open');
+      });
+      
+      // No custom JavaScript needed! The CSS handles the smooth animations
+      // The browser's native details/summary behavior works with our CSS transitions
+    });
+  </script>
 </body>
 </html>

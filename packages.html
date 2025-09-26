@@ -3,157 +3,337 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Packages — Nyxion Labs</title>
+  <title>AI Implementation Packages — Nyxion Labs</title>
+  <meta name="description" content="Choose the right AI implementation package for your business. From rapid prototypes to enterprise deployments with guaranteed ROI.">
+  
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css"/>
-   <link rel="icon" type="image/png" href="./logos/logo-Photoroom.png" />
+  <link rel="icon" type="image/png" href="./logos/logo-Photoroom.png" />
 </head>
 <body>
   <!-- HEADER -->
   <header id="site-header" class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="brand">
-        <img class="brand-mark" src="./logos/logo-Photoroom.png" alt="Nyxion Labs"/>
+        <img class="brand-mark" src="./logos/logo-Photoroom.png" alt="Nyxion Labs" width="48" height="48"/>
         <span class="brand-name">Nyxion Labs</span>
       </a>
       <nav class="nav">
-<button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
-  <span></span><span></span><span></span>
-</button>
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
 
-<div id="navLinks" class="nav-links">
-  <a href="index.html#solutions">Solutions</a>
-  <a href="packages.html">Packages</a>
-  <a href="index.html#process">Process</a>
-  <a href="contact.html">Contact</a>
-  <a href="consultation.html" class="btn btn-primary btn-sm">Get Started</a>
-</div>
-
+        <div id="navLinks" class="nav-links">
+          <a href="index.html#solutions">Solutions</a>
+          <a href="packages.html">Packages</a>
+          <a href="index.html#process">Process</a>
+          <a href="index.html#case-studies">Case Studies</a>
+          <a href="contact.html">Contact</a>
+<a href="consultation.html" class="btn btn-primary">Get Started</a>
+        </div>
       </nav>
     </div>
   </header>
 
   <!-- HERO -->
   <section class="page-hero">
-    <h1 class="reveal-words">Packages</h1>
-    <p class="fade-up">Choose a bundle that matches your stage. Upgrade anytime as your needs grow.</p>
+    <div class="container">
+      <h1 class="reveal-words">Choose Your AI Implementation Path</h1>
+      <p class="fade-up">From rapid prototypes to enterprise-scale deployments. Every package includes guaranteed ROI measurement and ongoing optimization.</p>
+      
+      <div class="hero-badges">
+        <span class="badge">30-day money-back guarantee</span>
+        <span class="badge">ROI tracking included</span>
+        <span class="badge">No vendor lock-in</span>
+      </div>
+    </div>
   </section>
 
   <!-- PLANS -->
-  <section class="plans container">
-    <!-- STARTER -->
-    <div class="plan fade-up">
-      <h3>Starter</h3>
-      <div class="price">$799 <span>/ project</span></div>
-      <ul class="bullets">
-        <li>Opportunity mapping (1 workshop)</li>
-        <li>One assistant/automation or dashboard</li>
-        <li>Basic data integration (CSV / Google Sheet)</li>
-        <li>Security baseline & PII handling</li>
-        <li>Email support (business hours)</li>
-      </ul>
-      <a href="consultation.html" class="btn btn-primary btn-sm">Book Call</a>
-    </div>
-
-    <!-- PROFESSIONAL -->
-           <div class="plan popular">
-  <span class="ribbon">Most popular</span>
-    <div class="plan featured fade-up">
-
- 
-      <h3>Professional</h3>
-      <div class="price">$2,499 <span>/ month</span></div>
-      <ul class="bullets">
-        <li>Everything in <b>Starter</b>, plus:</li>
-        <li>3–5 use cases (assistants, automations, dashboards)</li>
-        <li>Private model hosting & vector DB</li>
-        <li>Azure/AWS setup, SSO & RBAC</li>
-        <li>Analytics, observability & cost tracking</li>
-        <li>Weekly check-ins & Slack support</li>
-      </ul>
-      <a href="consultation.html" class="btn btn-primary btn-sm">Book Call</a>
-    </div>
-    </div>
-
-    <!-- ENTERPRISE -->
-    <div class="plan fade-up">
-      <h3>Enterprise</h3>
-      <div class="price">Custom</div>
-      <ul class="bullets">
-        <li>Everything in <b>Professional</b>, plus:</li>
-        <li>On-prem / private cloud deployment</li>
-        <li>Advanced governance & audit logging</li>
-        <li>Role-based data access & policy enforcement</li>
-        <li>Uptime SLAs & 24/7 on-call support</li>
-        <li>Multi-team rollout & enablement</li>
-      </ul>
-      <a href="consultation.html" class="btn btn-primary btn-sm">Book Call</a>
-    </div>
-  </section>
-
-  <!-- WHAT'S INCLUDED (fills the “empty” area with real value) -->
-  <section class="container included">
-    <h2>What’s included</h2>
-    <p class="sub">A quick comparison of the most-asked-about capabilities.</p>
-
-    <div class="compare">
-      <div class="compare-head">
-        <span>Capability</span>
-        <span>Starter</span>
-        <span>Professional</span>
-        <span>Enterprise</span>
-      </div>
-
-      <div class="compare-row">
-        <span>Use cases per engagement</span>
-        <span>1</span>
-        <span>3–5</span>
-        <span>Program-level</span>
-      </div>
-
-      <div class="compare-row">
-        <span>Data integration</span>
-        <span>CSV / Sheets</span>
-        <span>DB + APIs</span>
-        <span>Hybrid / On-prem</span>
-      </div>
-
-      <div class="compare-row">
-        <span>Model hosting</span>
-        <span>Shared</span>
-        <span>Private</span>
-        <span>Private / On-prem</span>
-      </div>
-
-      <div class="compare-row">
-        <span>Security & governance</span>
-        <span>Baseline</span>
-        <span>SSO, RBAC, audit</span>
-        <span>Fine-grained policy + DLP</span>
-      </div>
-
-      <div class="compare-row">
-        <span>Support</span>
-        <span>Email</span>
-        <span>Slack + weekly</span>
-        <span>24/7 + SLAs</span>
-      </div>
-
-      <div class="compare-row">
-        <span>Analytics & cost controls</span>
-        <span>Basic</span>
-        <span>Dashboards & budgets</span>
-        <span>Org-wide FinOps</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRE-FOOTER CTA (prevents the footer from feeling “empty”) -->
-  <section class="prefooter-cta">
+  <section class="plans-section">
     <div class="container">
-      <h2>Not sure which package fits?</h2>
-      <p>We’ll help you scope the highest-ROI starting point and plan the path to scale.</p>
-      <a href="consultation.html" class="btn btn-white btn-sm">Free 20-min Consultation</a>
+      <!-- PILOT PACKAGE -->
+      <div class="plan-card fade-up">
+        <div class="plan-header">
+          <h3>Pilot</h3>
+          <div class="plan-badge">Perfect for first AI project</div>
+        </div>
+        
+        <div class="price-section">
+          <div class="price">$2,995</div>
+          <div class="price-period">one-time project</div>
+          <div class="savings">Save $1,000 vs hourly</div>
+        </div>
+
+        <div class="plan-content">
+          <div class="what-you-get">
+            <h4>What's included:</h4>
+            <ul class="feature-list">
+              <li>1 AI automation or assistant</li>
+              <li>Discovery workshop & ROI analysis</li>
+              <li>Working prototype in 2 weeks</li>
+              <li>Basic data integration (CSV/API)</li>
+              <li>Security baseline & compliance check</li>
+              <li>30-day post-launch support</li>
+              <li>ROI measurement dashboard</li>
+            </ul>
+          </div>
+
+          <div class="ideal-for">
+            <h4>Ideal for:</h4>
+            <p>Companies wanting to test AI impact with a specific use case before larger investment.</p>
+          </div>
+
+          <div class="guarantee">
+            <strong>💰 ROI Guarantee:</strong> If you don't see 200% ROI within 6 months, we'll refund 50% of your investment.
+          </div>
+        </div>
+
+        <div class="plan-actions">
+          <a href="consultation.html?package=pilot" class="btn btn-primary">Start Pilot Project</a>
+          <p class="payment-info">Payment plans available</p>
+        </div>
+      </div>
+
+      <!-- PROFESSIONAL PACKAGE -->
+      <div class="plan-card featured fade-up">
+        <div class="plan-ribbon">Most Popular</div>
+        <div class="plan-header">
+          <h3>Professional</h3>
+          <div class="plan-badge">Comprehensive AI transformation</div>
+        </div>
+        
+        <div class="price-section">
+          <div class="price">$8,500</div>
+          <div class="price-period">per month</div>
+          <div class="savings">40% less than hiring AI team</div>
+        </div>
+
+        <div class="plan-content">
+          <div class="what-you-get">
+            <h4>Everything in Pilot, plus:</h4>
+            <ul class="feature-list">
+              <li>3-5 AI use cases simultaneously</li>
+              <li>Private model hosting & vector database</li>
+              <li>Azure/AWS setup with SSO & RBAC</li>
+              <li>Advanced analytics & cost optimization</li>
+              <li>Weekly strategy calls & Slack support</li>
+              <li>Custom integrations & workflows</li>
+              <li>Team training & change management</li>
+              <li>99.9% uptime SLA</li>
+            </ul>
+          </div>
+
+          <div class="ideal-for">
+            <h4>Ideal for:</h4>
+            <p>Mid-size companies ready to scale AI across multiple departments and processes.</p>
+          </div>
+
+          <div class="guarantee">
+            <strong>🎯 Performance Guarantee:</strong> We guarantee 40-70% operational cost reduction or extend service free until achieved.
+          </div>
+        </div>
+
+        <div class="plan-actions">
+          <a href="consultation.html?package=professional" class="btn btn-primary">Transform Your Operations</a>
+          <p class="payment-info">3-month minimum commitment</p>
+        </div>
+      </div>
+
+      <!-- ENTERPRISE PACKAGE -->
+      <div class="plan-card fade-up">
+        <div class="plan-header">
+          <h3>Enterprise</h3>
+          <div class="plan-badge">Large-scale AI deployment</div>
+        </div>
+        
+        <div class="price-section">
+          <div class="price">Custom</div>
+          <div class="price-period">starting at $25k/month</div>
+          <div class="savings">Dedicated AI team + infrastructure</div>
+        </div>
+
+        <div class="plan-content">
+          <div class="what-you-get">
+            <h4>Everything in Professional, plus:</h4>
+            <ul class="feature-list">
+              <li>Organization-wide AI strategy</li>
+              <li>On-premise or private cloud deployment</li>
+              <li>Advanced governance & audit logging</li>
+              <li>Multi-region deployment support</li>
+              <li>24/7 dedicated support team</li>
+              <li>Custom model training & fine-tuning</li>
+              <li>Enterprise integrations (SAP, Oracle, etc.)</li>
+              <li>C-level reporting & business intelligence</li>
+            </ul>
+          </div>
+
+          <div class="ideal-for">
+            <h4>Ideal for:</h4>
+            <p>Large enterprises requiring comprehensive AI transformation with strict compliance and governance requirements.</p>
+          </div>
+
+          <div class="guarantee">
+            <strong>📈 Executive Guarantee:</strong> Quarterly business reviews with C-level metrics and continuous optimization to exceed targets.
+          </div>
+        </div>
+
+        <div class="plan-actions">
+          <a href="consultation.html?package=enterprise" class="btn btn-primary">Discuss Enterprise Needs</a>
+          <p class="payment-info">Custom terms & SLA agreements</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="comparison-section">
+    <div class="container">
+      <h2>Detailed Feature Comparison</h2>
+      <p class="comparison-subtitle">See exactly what's included in each package to make the right choice for your business.</p>
+
+      <div class="comparison-table">
+        <div class="comparison-header">
+          <div class="feature-column">Feature</div>
+          <div class="plan-column">Pilot</div>
+          <div class="plan-column featured-col">Professional</div>
+          <div class="plan-column">Enterprise</div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="feature-name">AI Use Cases</div>
+          <div class="feature-value">1 use case</div>
+          <div class="feature-value">3-5 use cases</div>
+          <div class="feature-value">Unlimited</div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="feature-name">Implementation Time</div>
+          <div class="feature-value">2 weeks</div>
+          <div class="feature-value">4-6 weeks</div>
+          <div class="feature-value">8-12 weeks</div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="feature-name">Data Integration</div>
+          <div class="feature-value">CSV, basic APIs</div>
+          <div class="feature-value">Databases, advanced APIs</div>
+          <div class="feature-value">Enterprise systems</div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="feature-name">Model Hosting</div>
+          <div class="feature-value">Shared cloud</div>
+          <div class="feature-value">Private cloud</div>
+          <div class="feature-value">On-premise option</div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="feature-name">Security & Compliance</div>
+          <div class="feature-value">Baseline security</div>
+          <div class="feature-value">SSO, RBAC, auditing</div>
+          <div class="feature-value">Advanced governance</div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="feature-name">Support Level</div>
+          <div class="feature-value">Email (business hours)</div>
+          <div class="feature-value">Slack + weekly calls</div>
+          <div class="feature-value">24/7 dedicated team</div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="feature-name">Analytics & Monitoring</div>
+          <div class="feature-value">Basic ROI dashboard</div>
+          <div class="feature-value">Advanced analytics</div>
+          <div class="feature-value">Enterprise BI integration</div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="feature-name">Training & Enablement</div>
+          <div class="feature-value">Documentation</div>
+          <div class="feature-value">Team workshops</div>
+          <div class="feature-value">Organization-wide program</div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="feature-name">SLA Guarantee</div>
+          <div class="feature-value">Best effort</div>
+          <div class="feature-value">99.9% uptime</div>
+          <div class="feature-value">99.99% + custom SLAs</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="faq-section">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>How quickly can we see results?</h3>
+          <p>Most clients see initial results within 2-3 weeks of deployment. Full ROI typically materializes within 3-6 months depending on the use case complexity and scale.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What if AI doesn't work for our industry?</h3>
+          <p>We've successfully deployed AI across 15+ industries. Our discovery process identifies the highest-impact opportunities specific to your sector. If we can't find a viable use case, we'll tell you upfront.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Do you work with our existing systems?</h3>
+          <p>Yes. We integrate with popular platforms like Salesforce, SAP, Oracle, Microsoft 365, and custom databases. Our API-first approach ensures compatibility with your current tech stack.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What about data security and privacy?</h3>
+          <p>We follow enterprise security standards including SOC 2, GDPR compliance, and industry-specific regulations. Your data stays within your infrastructure or approved cloud environments.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Can we upgrade or downgrade packages?</h3>
+          <p>Absolutely. You can scale up as your AI needs grow or adjust based on business changes. We provide migration support to ensure continuity.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What's included in ongoing support?</h3>
+          <p>All packages include system monitoring, performance optimization, and access to updates. Professional and Enterprise tiers include proactive support and strategic guidance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROI CALCULATOR TEASER -->
+  <section class="roi-teaser">
+    <div class="container">
+      <div class="roi-content">
+        <h2>Calculate Your Potential ROI</h2>
+        <p>See how much you could save with AI automation based on your current processes and team size.</p>
+        
+        <div class="roi-preview">
+          <div class="roi-example">
+            <h4>Example: Mid-size Company</h4>
+            <div class="roi-metrics">
+              <div class="roi-metric">
+                <span class="roi-number">$2.3M</span>
+                <span class="roi-label">Annual Savings</span>
+              </div>
+              <div class="roi-metric">
+                <span class="roi-number">8 months</span>
+                <span class="roi-label">Payback Period</span>
+              </div>
+              <div class="roi-metric">
+                <span class="roi-number">340%</span>
+                <span class="roi-label">3-year ROI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <a href="consultation.html" class="btn btn-white btn-xl">Get Your Custom ROI Analysis</a>
+      </div>
     </div>
   </section>
 
@@ -161,19 +341,21 @@
     <div class="container footer-grid">
       <div>
         <h3>Nyxion Labs</h3>
-        <p>Applied AI solutions for automation, assistants, analytics, and cloud ecosystems.</p>
+        <p>Applied AI solutions that deliver measurable ROI through automation, intelligent assistants, and predictive analytics.</p>
       </div>
       <div>
         <h4>Company</h4>
-        <a href="#solutions">Solutions</a>
-        <a href="#process">How We Work</a>
+        <a href="index.html#solutions">Solutions</a>
+        <a href="packages.html">Packages</a>
+        <a href="index.html#process">How We Work</a>
         <a href="contact.html">Contact</a>
-        <a href="consultation.html">Free Consultation</a>
+        <a href="consultation.html">Free Assessment</a>
       </div>
       <div>
         <h4>Contact</h4>
         <a href="mailto:info@nyxionlabs.com">info@nyxionlabs.com</a>
         <a href="tel:+923194070681">+92 319 407 0681</a>
+        <p><small>San Francisco, CA • Remote</small></p>
       </div>
     </div>
     <div class="foot-bottom">© 2025 Nyxion Labs. All rights reserved.</div>

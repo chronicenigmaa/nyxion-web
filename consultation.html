@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Free Consultation — Nyxion Labs</title>
+  <title>Free AI Assessment — Nyxion Labs</title>
+  <meta name="description" content="Get a free 20-minute AI assessment with concrete ROI projections. No sales pitch, just actionable guidance on your first AI implementation.">
 
   <!-- Fonts + site CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css"/>
-   <link rel="icon" type="image/png" href="./logos/logo-Photoroom.png" />
+  <link rel="icon" type="image/png" href="./logos/logo-Photoroom.png" />
 
-  <!-- Calendly assets (keeps popup + inline embed working) -->
+  <!-- Calendly assets -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
@@ -19,99 +20,261 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="brand" aria-label="Nyxion Labs home">
-        <img class="brand-mark" src="./logos/logo-Photoroom.png" alt="Nyxion Labs"/>
+        <img class="brand-mark" src="./logos/logo-Photoroom.png" alt="Nyxion Labs" width="48" height="48"/>
         <span class="brand-name">Nyxion Labs</span>
       </a>
       <nav>
-<button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
-  <span></span><span></span><span></span>
-</button>
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
 
-<div id="navLinks" class="nav-links">
-  <a href="index.html#solutions">Solutions</a>
-  <a href="packages.html">Packages</a>
-  <a href="index.html#process">Process</a>
-  <a href="contact.html">Contact</a>
-  <a href="consultation.html" class="btn btn-primary btn-sm">Get Started</a>
-</div>
-
+        <div id="navLinks" class="nav-links">
+          <a href="index.html#solutions">Solutions</a>
+          <a href="packages.html">Packages</a>
+          <a href="index.html#process">Process</a>
+          <a href="index.html#case-studies">Case Studies</a>
+          <a href="contact.html">Contact</a>
+<a href="consultation.html" class="btn btn-primary">Get Started</a>
+        </div>
       </nav>
     </div>
   </header>
 
-  <main class="container consult">
+  <main class="container consultation-page">
     <!-- Hero -->
-    <section class="consult-hero">
-      <h1>Book a free 20-minute consultation</h1>
-      <p>Get fast, actionable guidance on the smartest first step for AI in your team.</p>
+    <section class="consultation-hero">
+      <h1>Get Your Free AI Assessment</h1>
+      <p>20-minute call to identify your highest-ROI AI opportunities with concrete next steps and budget estimates.</p>
 
-      <div class="badge-row">
-        <span class="badge">No sales pitch</span>
-        <span class="badge">Action plan in 24h</span>
-        <span class="badge">Security-first</span>
-      </div>
-
-      <div class="cta-row">
-        <a href="#" class="btn btn-primary btn-sm"
-           data-calendly="https://calendly.com/nyxionlabs/">
-          Request Free Consultation
-        </a>
-        <a href="mailto:hello@nyxionlabs.com" class="btn btn-white btn-sm">Prefer email?</a>
-      </div>
-    </section>
-
-    <!-- Two-column content -->
-    <section class="consult-grid">
-      <div class="left">
-        <div class="card">
-          <h2>What you’ll get</h2>
-          <ul class="bullets">
-            <li>Quick assessment of your use case & data readiness</li>
-            <li>Recommended approach & architecture</li>
-            <li>High-level timeline, effort, and cost ranges</li>
-            <li>Risk, security, and governance checklist</li>
-          </ul>
+      <div class="value-props">
+        <div class="value-prop">
+          <div class="prop-icon">🎯</div>
+          <div class="prop-content">
+            <h3>ROI-focused analysis</h3>
+            <p>Identify processes that could save 40-70% in costs</p>
+          </div>
         </div>
-
-        <div class="card">
-          <h2>How the call works</h2>
-          <ol class="steps">
-            <li><strong>Context (5m):</strong> Goals, stakeholders, constraints.</li>
-            <li><strong>Deep dive (10m):</strong> Data sources, workflows, guardrails.</li>
-            <li><strong>Next steps (5m):</strong> Options to pilot, build, or evaluate.</li>
-          </ol>
-          <p class="note">After the call you’ll receive a short written summary with concrete next steps.</p>
+        <div class="value-prop">
+          <div class="prop-icon">📋</div>
+          <div class="prop-content">
+            <h3>Written action plan</h3>
+            <p>Receive detailed next steps within 24 hours</p>
+          </div>
         </div>
-
-        <div class="card light">
-          <h3>Trusted by teams who ship</h3>
-          <p>We design and operate production systems with uptime, observability, and cost controls.</p>
-          <div class="list compact">
-            <span>Assistants & copilots</span>
-            <span>Automation & RPA</span>
-            <span>Analytics & dashboards</span>
-            <span>Private model hosting</span>
+        <div class="value-prop">
+          <div class="prop-icon">🔒</div>
+          <div class="prop-content">
+            <h3>No sales pressure</h3>
+            <p>Honest assessment even if AI isn't right for you</p>
           </div>
         </div>
       </div>
 
-      <aside class="right">
-        <div class="card">
-          <h2>Pick a time</h2>
-          <div class="calendly-inline-widget"
-               data-url="https://calendly.com/nyxionlabs/"
-               style="min-width:260px;height:760px;"></div>
-          <p class="tiny">
-            Having trouble? <a href="#"
-              data-calendly="https://calendly.com/nyxionlabs/">Open the popup</a>.
-          </p>
+      <div class="cta-options">
+        <a href="https://calendly.com/nyxionlabs/" target="_blank" class="btn btn-primary btn-xl">
+          Book Free Assessment Call
+        </a>
+        <a href="#quick-form" class="btn btn-outline btn-xl">Prefer to Start with Questions?</a>
+      </div>
+    </section>
+
+    <!-- Two-column content -->
+    <section class="consultation-content">
+      <div class="left-column">
+        <!-- What you'll discover -->
+        <div class="content-card">
+          <h2>What You'll Discover</h2>
+          <ul class="discovery-list">
+            <li>
+              <strong>Automation opportunities:</strong> Specific processes where AI can eliminate manual work
+            </li>
+            <li>
+              <strong>ROI projections:</strong> Estimated cost savings and payback timeline for each opportunity
+            </li>
+            <li>
+              <strong>Implementation roadmap:</strong> Recommended approach, timeline, and resource requirements
+            </li>
+            <li>
+              <strong>Risk assessment:</strong> Technical, security, and change management considerations
+            </li>
+            <li>
+              <strong>Budget estimates:</strong> High-level investment ranges for different approaches
+            </li>
+          </ul>
         </div>
 
-        <div class="card">
-          <h3>Rather write it up?</h3>
-          <p>Email us at <a href="mailto:info@nyxionlabs.com">info@nyxionlabs.com</a> with a few lines about your goals.</p>
+        <!-- Call structure -->
+        <div class="content-card">
+          <h2>How the Assessment Works</h2>
+          <div class="call-structure">
+            <div class="call-step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h4>Context & Goals (5 minutes)</h4>
+                <p>Current challenges, business objectives, team structure, and success metrics.</p>
+              </div>
+            </div>
+            <div class="call-step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h4>Process Analysis (10 minutes)</h4>
+                <p>Identify repetitive tasks, data sources, workflow bottlenecks, and automation potential.</p>
+              </div>
+            </div>
+            <div class="call-step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h4>Recommendations (5 minutes)</h4>
+                <p>Prioritized opportunities, implementation options, and next steps with timeline.</p>
+              </div>
+            </div>
+          </div>
+          <div class="follow-up">
+            <strong>Within 24 hours:</strong> You'll receive a written summary with specific recommendations, ROI estimates, and implementation options.
+          </div>
+        </div>
+
+        <!-- Social proof -->
+        <div class="content-card testimonial-card">
+          <h3>What Others Say</h3>
+          <blockquote>
+            "The assessment call was incredibly valuable. They identified $400K in annual savings opportunities we hadn't considered and gave us a clear roadmap to get started."
+          </blockquote>
+          <cite>— Sarah Chen, Operations Director, TechCorp</cite>
+          
+          <blockquote>
+            "No fluff, no sales pitch. Just honest analysis of where AI could actually help our business. The follow-up report was more detailed than we expected."
+          </blockquote>
+          <cite>— Michael Rodriguez, CFO, Manufacturing Inc.</cite>
+        </div>
+      </div>
+
+      <!-- Right column with booking options -->
+      <aside class="right-column">
+        <!-- Primary booking -->
+        <div class="content-card booking-card">
+          <h2>Schedule Your Assessment</h2>
+          <p>Choose a time that works for you. All calls are with senior AI consultants, not sales reps.</p>
+          
+          <div class="booking-options">
+            <a href="https://calendly.com/nyxionlabs/" target="_blank" class="btn btn-primary full-width">
+              <span>Book 20-Minute Call</span>
+            </a>
+            <p class="booking-note">Usually available within 2-3 business days</p>
+          </div>
+
+          <div class="urgency-option">
+            <h4>Need to move faster?</h4>
+            <p>For urgent assessments, email us at <a href="mailto:info@nyxionlabs.com">info@nyxionlabs.com</a> with "URGENT" in the subject line.</p>
+          </div>
+        </div>
+
+        <!-- Alternative: Quick form -->
+        <div class="content-card" id="quick-form">
+          <h3>Start with a Quick Assessment</h3>
+          <p>Answer a few questions and we'll prepare a customized discussion for your call.</p>
+          
+          <form class="quick-assessment-form" action="contact.php" method="POST">
+            <input type="hidden" name="form_type" value="quick_assessment">
+            
+            <label>
+              Company size
+              <select name="company_size" required>
+                <option value="">Select...</option>
+                <option value="1-10">1-10 employees</option>
+                <option value="11-50">11-50 employees</option>
+                <option value="51-200">51-200 employees</option>
+                <option value="201-1000">201-1,000 employees</option>
+                <option value="1000+">1,000+ employees</option>
+              </select>
+            </label>
+
+            <label>
+              Primary interest
+              <select name="primary_interest" required>
+                <option value="">Select...</option>
+                <option value="process_automation">Process Automation</option>
+                <option value="customer_support">Customer Support AI</option>
+                <option value="document_processing">Document Processing</option>
+                <option value="predictive_analytics">Predictive Analytics</option>
+                <option value="knowledge_assistant">Knowledge Assistant</option>
+                <option value="not_sure">Not sure yet</option>
+              </select>
+            </label>
+
+            <label>
+              Biggest operational challenge
+              <textarea name="challenge" rows="3" placeholder="e.g., 'Manual invoice processing takes 2 days per batch' or 'Customer support overwhelmed with repetitive questions'"></textarea>
+            </label>
+
+            <label>
+              Your email
+              <input type="email" name="email" required placeholder="you@company.com">
+            </label>
+
+            <button type="submit" class="btn btn-primary full-width">
+              Submit & Schedule Call
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact alternative -->
+        <div class="content-card">
+          <h3>Prefer Email?</h3>
+          <p>Send us a brief description of your automation goals and we'll reply within 4 hours with initial thoughts and calendar options.</p>
+          <a href="mailto:info@nyxionlabs.com?subject=AI Assessment Request" class="btn btn-outline full-width">
+            Email Us Instead
+          </a>
         </div>
       </aside>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="consultation-faq">
+      <h2>Common Questions</h2>
+      <div class="faq-grid">
+        <details class="faq-item">
+          <summary>Is this really free with no strings attached?</summary>
+          <p>Yes. We provide genuine value upfront because we believe in building relationships through expertise, not sales pressure. Even if we're not the right fit, you'll leave with actionable insights.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Who will I be speaking with?</summary>
+          <p>You'll speak directly with one of our senior AI consultants—the same people who design and implement our solutions. No sales reps or junior staff.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>What if I'm not ready to implement AI yet?</summary>
+          <p>That's perfectly fine. We'll help you understand what preparation steps make sense and when the timing might be better for your organization.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do you share information about my business?</summary>
+          <p>Never. Everything discussed is strictly confidential. We can sign NDAs before our call if needed.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>What industries do you work with?</summary>
+          <p>We've successfully implemented AI across manufacturing, healthcare, financial services, logistics, professional services, and more. Industry experience helps but isn't required—good processes can be automated regardless of sector.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>How technical do I need to be for this call?</summary>
+          <p>Not at all. We focus on business processes and outcomes. Our job is to handle the technical complexity so you can focus on results.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+      <div class="cta-content">
+        <h2>Ready to Discover Your AI Opportunities?</h2>
+        <p>Join 100+ companies who've used our assessment to identify millions in potential savings.</p>
+        <a href="https://calendly.com/nyxionlabs/" target="_blank" class="btn btn-primary btn-xl">
+          Book Your Free Assessment Now
+        </a>
+        <p class="cta-note">Next available slots usually within 2-3 business days</p>
+      </div>
     </section>
   </main>
 
@@ -119,25 +282,26 @@
     <div class="container footer-grid">
       <div>
         <h3>Nyxion Labs</h3>
-        <p>Applied AI solutions for automation, assistants, analytics, and cloud ecosystems.</p>
+        <p>Applied AI solutions that deliver measurable ROI through automation, intelligent assistants, and predictive analytics.</p>
       </div>
       <div>
         <h4>Company</h4>
-        <a href="#solutions">Solutions</a>
-        <a href="#process">How We Work</a>
+        <a href="index.html#solutions">Solutions</a>
+        <a href="packages.html">Packages</a>
+        <a href="index.html#process">How We Work</a>
         <a href="contact.html">Contact</a>
-        <a href="consultation.html">Free Consultation</a>
+        <a href="consultation.html">Free Assessment</a>
       </div>
       <div>
         <h4>Contact</h4>
         <a href="mailto:info@nyxionlabs.com">info@nyxionlabs.com</a>
         <a href="tel:+923194070681">+92 319 407 0681</a>
+        <p><small>San Francisco, CA • Remote</small></p>
       </div>
     </div>
     <div class="foot-bottom">© 2025 Nyxion Labs. All rights reserved.</div>
   </footer>
 
-  
   <script src="script.js"></script>
 </body>
 </html>

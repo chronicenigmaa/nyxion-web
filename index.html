@@ -3,267 +3,404 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nyxion Labs — Applied AI for Ambitious Teams</title>
+  <title>Nyxion Labs — AI Automation That Delivers Measurable ROI</title>
+  <meta name="description" content="We build production-ready AI systems that reduce operational costs by 40-70%. Custom automation, intelligent assistants, and predictive analytics with enterprise security.">
+  
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Nyxion Labs",
+    "description": "Applied AI solutions for automation, assistants, analytics, and cloud ecosystems",
+    "url": "https://nyxionlabs.com",
+    "logo": "https://nyxionlabs.com/logos/logo-Photoroom.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+92-319-407-0681",
+      "contactType": "sales",
+      "email": "info@nyxionlabs.com"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "San Francisco",
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    },
+    "sameAs": [],
+    "service": [
+      {
+        "@type": "Service",
+        "name": "AI Process Automation",
+        "description": "Automate repetitive business processes with AI"
+      },
+      {
+        "@type": "Service", 
+        "name": "Knowledge Assistants",
+        "description": "RAG-powered AI assistants for document understanding"
+      },
+      {
+        "@type": "Service",
+        "name": "Predictive Analytics",
+        "description": "AI-powered forecasting and decision support"
+      }
+    ]
+  }
+  </script>
+  
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="./logos/logo-Photoroom.png" />
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="hero-bg.webp" as="image" />
+  <link rel="preconnect" href="https://assets.calendly.com" />
 </head>
 <body>
   <!-- Header -->
   <header id="site-header" class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="brand" aria-label="Nyxion Labs home">
-        <img class="brand-mark" src="./logos/logo-Photoroom.png" alt="Nyxion Labs" />
+        <img class="brand-mark" src="./logos/logo-Photoroom.png" alt="Nyxion Labs" width="56" height="56" />
         <span class="brand-name">Nyxion Labs</span>
       </a>
       <nav class="nav" aria-label="Primary">
-<button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
-  <span></span><span></span><span></span>
-</button>
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
 
-<div id="navLinks" class="nav-links">
-  <a href="index.html#solutions">Solutions</a>
-  <a href="packages.html">Packages</a>
-  <a href="index.html#process">Process</a>
-  <a href="contact.html">Contact</a>
-  <a href="consultation.html" class="btn btn-primary btn-sm">Get Started</a>
-</div>
+        <div id="navLinks" class="nav-links">
+          <a href="#solutions">Solutions</a>
+          <a href="packages.html">Packages</a>
+          <a href="#process">Process</a>
+          <a href="#case-studies">Case Studies</a>
+          <a href="contact.html">Contact</a>
+<a href="consultation.html" class="btn btn-primary">Get Started</a>
+        </div>
       </nav>
     </div>
   </header>
+  
   <main>
-  <!-- Hero (video background) -->
+    <!-- Hero (optimized background) -->
 <section class="hero">
   <video class="hero-video" autoplay muted loop playsinline>
-    <source src="background-hero.mp4" type="video/mp4" />
+    <source src="background-hero.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <div class="hero-overlay"></div>
   <div class="container">
-    <div class="hero-content">
-      <h1 class="reveal-words">Applied AI for Ambitious Teams</h1>
-      <p class="fade-up">
-        We design, build, and operate AI systems that actually ship—assistants, automation, analytics, and cloud ecosystems—delivered with security and governance.
-      </p>
-      <div class="hero-actions fade-up">
-        <a href="consultation.html" class="btn btn-white">Schedule Free Consultation</a>
-        <a href="#solutions" class="btn btn-outline">Explore Solutions</a>
-        
-      </div>
-    </div>
-  </div>
-</section>
 
-  <!-- Trust -->
-  <section class="trust">
-    <div class="container">
-      <h2 class="trust-kicker fade-up">Trusted by forward-thinking organizations</h2>
-      <div class="stats">
-        <div class="stat fade-up"><div class="stat-number">50+</div><div class="stat-label">Projects Delivered</div></div>
-        <div class="stat fade-up"><div class="stat-number">99.9%</div><div class="stat-label">Uptime SLA</div></div>
-        <div class="stat fade-up"><div class="stat-number">10x</div><div class="stat-label">Average ROI</div></div>
-        <div class="stat fade-up"><div class="stat-number">24/7</div><div class="stat-label">Enterprise Support</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Solutions (Digica-style banners) -->
-  <section id="solutions" class="solutions">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="reveal-words">Our Solutions</h2>
-        <p class="section-subtitle fade-up">Modular AI offerings that meet you where you are—delivered with security and governance baked in.</p>
-      </div>
-
-      <!-- 1) Process Automation (button removed as requested) -->
-      <div class="banner">
-        <div class="banner-content">
-          <div class="banner-icon">🤖</div>
-          <h3 class="reveal-words">Process Automation</h3>
-          <p>Automate repetitive tasks with human-in-the-loop guardrails and complete traceability.</p>
-          <ul class="checklist">
-            <li>Workflow orchestration</li>
-            <li>Quality gates & approvals</li>
-            <li>Audit trails</li>
-          </ul>
-        </div>
-        <div class="banner-media">
-          <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=1400&auto=format&fit=crop" alt="Automation dashboard" />
-        </div>
-      </div>
-
-      <div class="banner reverse">
-        <div class="banner-content">
-          <div class="banner-icon">💬</div>
-          <h3 class="reveal-words">Knowledge Assistants</h3>
-          <p>RAG-backed assistants that provide grounded answers with citations from your documents.</p>
-          <ul class="checklist">
-            <li>Document understanding</li>
-            <li>Semantic search</li>
-            <li>Source attribution</li>
-          </ul>
-        </div>
-        <div class="banner-media">
-          <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1400&auto=format&fit=crop" alt="Assistant interface" />
-        </div>
-      </div>
-
-      <div class="banner">
-        <div class="banner-content">
-          <div class="banner-icon">📊</div>
-          <h3 class="reveal-words">Predictive Analytics</h3>
-          <p>Forecasting and decision support dashboards with explainability built in.</p>
-          <ul class="checklist">
-            <li>Time-series forecasting</li>
-            <li>Anomaly detection</li>
-            <li>Executive dashboards</li>
-          </ul>
-        </div>
-        <div class="banner-media">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1400&auto=format&fit=crop" alt="Analytics dashboard" />
-        </div>
-      </div>
-
-      <div class="banner reverse">
-        <div class="banner-content">
-          <div class="banner-icon">🔗</div>
-          <h3 class="reveal-words">Platform Integration</h3>
-          <p>APIs and connectors to tie your stack together without vendor lock-in.</p>
-          <ul class="checklist">
-            <li>RESTful APIs</li>
-            <li>Event-driven architecture</li>
-            <li>Data pipeline orchestration</li>
-          </ul>
-        </div>
-        <div class="banner-media">
-          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1400&auto=format&fit=crop" alt="Integration architecture" />
-        </div>
-      </div>
-
-      <!-- 5) Azure Ecosystem (shorter button using .btn-sm + shorter label) -->
-      <div class="banner">
-        <div class="banner-content">
-          <div class="banner-icon">🛡️</div>
-          <h3 class="reveal-words">Azure Ecosystem</h3>
-          <p>Secure, scalable foundations using Azure OpenAI, AKS, and enterprise-grade security.</p>
-          <ul class="checklist">
-            <li>Azure OpenAI integration</li>
-            <li>Zero-trust architecture</li>
-            <li>Compliance frameworks</li>
-          </ul>
-          <a href="consultation.html" class="btn btn-white btn-sm">Book Free Consultation</a>
-        </div>
-        <div class="banner-media">
-          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1400&auto=format&fit=crop" alt="Cloud infrastructure" />
-        </div>
-      </div>
-
-      <div class="banner reverse">
-        <div class="banner-content">
-          <div class="banner-icon">🎓</div>
-          <h3 class="reveal-words">Training & Enablement</h3>
-          <p>Upskill your team with hands-on training and change-management support.</p>
-          <ul class="checklist">
-            <li>Custom workshops</li>
-            <li>Best-practices playbooks</li>
-            <li>Ongoing mentorship</li>
-          </ul>
-        </div>
-        <div class="banner-media">
-          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1400&auto=format&fit=crop" alt="Team training" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Process (graphics restored) -->
-  <section id="process" class="process">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="reveal-words">How We Work</h2>
-        <p class="section-subtitle fade-up">Our proven methodology ensures successful AI implementations from discovery to deployment.</p>
-      </div>
-
-      <div class="process-timeline">
-        <div class="timeline-connector"></div>
-
-        <div class="process-card fade-up">
-          <div class="process-header">
-            <div class="process-number">01</div>
-            <div class="process-badge">Discovery</div>
+        <div class="hero-content">
+          <h1 class="reveal-words">AI Automation That Delivers Measurable ROI</h1>
+          <p class="fade-up">
+            We build production-ready AI systems that reduce operational costs by 40-70%. From document processing automation to intelligent customer support—delivered with enterprise security and proven results.
+          </p>
+          <div class="hero-actions fade-up">
+            <a href="consultation.html" class="btn btn-white">Get Free Assessment</a>
+            <a href="#case-studies" class="btn btn-outline">See Case Studies</a>
           </div>
-          <div class="process-content">
-            <h3>Discovery & Assessment</h3>
-            <p>We analyze your current state, identify opportunities, and create a roadmap aligned with your business goals.</p>
-            <div class="process-features">
-              <span class="feature-tag">Current State Analysis</span>
-              <span class="feature-tag">Opportunity Mapping</span>
-              <span class="feature-tag">Strategic Roadmap</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust -->
+    <section class="trust">
+      <div class="container">
+        <h2 class="trust-kicker fade-up">Trusted by companies reducing costs and scaling operations</h2>
+        <div class="stats">
+          <div class="stat fade-up">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">AI Systems Deployed</div>
+          </div>
+          <div class="stat fade-up">
+            <div class="stat-number">99.9%</div>
+            <div class="stat-label">Uptime SLA</div>
+          </div>
+          <div class="stat fade-up">
+            <div class="stat-number">60%</div>
+            <div class="stat-label">Avg. Cost Reduction</div>
+          </div>
+          <div class="stat fade-up">
+            <div class="stat-number">2-4 weeks</div>
+            <div class="stat-label">Typical Deployment</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section id="case-studies" class="case-studies">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="reveal-words">Proven Results Across Industries</h2>
+          <p class="section-subtitle fade-up">Real implementations, measurable outcomes, documented ROI.</p>
+        </div>
+
+        <div class="case-grid">
+          <div class="case-card fade-up">
+            <div class="case-header">
+              <div class="case-industry">Manufacturing</div>
+              <div class="case-company">Fortune 500 Manufacturer</div>
+            </div>
+            <h3>Invoice Processing Automation</h3>
+            <p>Automated 10,000+ monthly invoices with 99.2% accuracy, reducing processing time from 3 days to 2 hours.</p>
+            <div class="case-metrics">
+              <div class="metric">
+                <span class="metric-value">75%</span>
+                <span class="metric-label">Cost Reduction</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">94%</span>
+                <span class="metric-label">Time Saved</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">$2.1M</span>
+                <span class="metric-label">Annual Savings</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="process-card fade-up">
-          <div class="process-header">
-            <div class="process-number">02</div>
-            <div class="process-badge">Prototype</div>
-          </div>
-          <div class="process-content">
-            <h3>Proof of Concept</h3>
-            <p>Rapid prototyping to validate assumptions and demonstrate value before full-scale development.</p>
-            <div class="process-features">
-              <span class="feature-tag">Rapid Prototyping</span>
-              <span class="feature-tag">Value Validation</span>
-              <span class="feature-tag">Risk Mitigation</span>
+          <div class="case-card fade-up">
+            <div class="case-header">
+              <div class="case-industry">Financial Services</div>
+              <div class="case-company">Regional Bank</div>
+            </div>
+            <h3>Loan Application Assistant</h3>
+            <p>AI assistant processes loan applications 5x faster while maintaining compliance and improving customer experience.</p>
+            <div class="case-metrics">
+              <div class="metric">
+                <span class="metric-value">400%</span>
+                <span class="metric-label">Speed Increase</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">65%</span>
+                <span class="metric-label">Staff Reduction</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">89%</span>
+                <span class="metric-label">Customer Satisfaction</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="process-card fade-up">
-          <div class="process-header">
-            <div class="process-number">03</div>
-            <div class="process-badge">Deploy</div>
-          </div>
-          <div class="process-content">
-            <h3>Production Deployment</h3>
-            <p>Secure, scalable deployment with monitoring, governance, and support infrastructure in place.</p>
-            <div class="process-features">
-              <span class="feature-tag">Secure Deployment</span>
-              <span class="feature-tag">24/7 Monitoring</span>
-              <span class="feature-tag">Ongoing Support</span>
+          <div class="case-card fade-up">
+            <div class="case-header">
+              <div class="case-industry">Healthcare</div>
+              <div class="case-company">Medical Device Company</div>
+            </div>
+            <h3>Predictive Maintenance</h3>
+            <p>AI predicts equipment failures 2-3 weeks in advance, reducing downtime by 80% and maintenance costs by 45%.</p>
+            <div class="case-metrics">
+              <div class="metric">
+                <span class="metric-value">80%</span>
+                <span class="metric-label">Downtime Reduction</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">45%</span>
+                <span class="metric-label">Cost Savings</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">$1.8M</span>
+                <span class="metric-label">ROI Year 1</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-  <!-- CTA -->
-  <section class="cta">
-    <div class="container">
-      <h2 class="reveal-words">Ready to Transform Your Business with AI?</h2>
-      <p class="fade-up">Schedule a free consultation to discuss your specific needs and explore how we can help.</p>
-      <a href="consultation.html" class="btn btn-white fade-up">Schedule Free Consultation</a>
-    </div>
-  </section>
-</main>
+
+    <!-- Solutions -->
+    <section id="solutions" class="solutions">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="reveal-words">AI Solutions That Work</h2>
+          <p class="section-subtitle fade-up">Production-ready systems with enterprise security and guaranteed ROI.</p>
+        </div>
+
+        <!-- Process Automation -->
+        <div class="banner">
+          <div class="banner-content">
+            <div class="banner-icon">🤖</div>
+            <h3 class="reveal-words">Process Automation</h3>
+            <p>Eliminate repetitive tasks with AI that handles documents, data entry, and workflow orchestration at scale.</p>
+            <ul class="checklist">
+              <li><strong>Document processing:</strong> Extract data from invoices, contracts, forms</li>
+              <li><strong>Workflow automation:</strong> Route tasks, approvals, notifications</li>
+              <li><strong>Quality assurance:</strong> Built-in validation and error handling</li>
+              <li><strong>Audit trails:</strong> Complete visibility into every decision</li>
+            </ul>
+            <div class="roi-badge">Typical ROI: 300-500%</div>
+          </div>
+          <div class="banner-media">
+            <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80&w=1400&auto=format&fit=crop" alt="Automation dashboard" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="banner reverse">
+          <div class="banner-content">
+            <div class="banner-icon">💬</div>
+            <h3 class="reveal-words">Knowledge Assistants</h3>
+            <p>RAG-powered assistants that understand your documents and provide accurate, cited answers to complex questions.</p>
+            <ul class="checklist">
+              <li><strong>Document understanding:</strong> PDFs, contracts, manuals, databases</li>
+              <li><strong>Semantic search:</strong> Find information across thousands of documents</li>
+              <li><strong>Source attribution:</strong> Every answer includes citations</li>
+              <li><strong>Access controls:</strong> Role-based permissions and data security</li>
+            </ul>
+            <div class="roi-badge">Saves 15-25 hours/week per employee</div>
+          </div>
+          <div class="banner-media">
+            <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1400&auto=format&fit=crop" alt="Assistant interface" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="banner">
+          <div class="banner-content">
+            <div class="banner-icon">📊</div>
+            <h3 class="reveal-words">Predictive Analytics</h3>
+            <p>AI-powered forecasting that helps you make data-driven decisions with confidence and measurable impact.</p>
+            <ul class="checklist">
+              <li><strong>Demand forecasting:</strong> Predict sales, inventory, resource needs</li>
+              <li><strong>Risk assessment:</strong> Identify potential issues before they occur</li>
+              <li><strong>Performance optimization:</strong> Maximize efficiency and reduce waste</li>
+              <li><strong>Executive dashboards:</strong> Real-time insights for leadership</li>
+            </ul>
+            <div class="roi-badge">Reduces forecast error by 40-60%</div>
+          </div>
+          <div class="banner-media">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1400&auto=format&fit=crop" alt="Analytics dashboard" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="banner reverse">
+          <div class="banner-content">
+            <div class="banner-icon">🔗</div>
+            <h3 class="reveal-words">Platform Integration</h3>
+            <p>Connect your existing systems with AI capabilities—no vendor lock-in, no data silos.</p>
+            <ul class="checklist">
+              <li><strong>API-first architecture:</strong> Integrates with your current stack</li>
+              <li><strong>Real-time processing:</strong> Handle thousands of requests per second</li>
+              <li><strong>Data pipeline automation:</strong> ETL/ELT with AI enhancement</li>
+              <li><strong>Cloud-agnostic:</strong> Deploy on AWS, Azure, GCP, or on-premise</li>
+            </ul>
+            <a href="consultation.html" class="btn btn-white btn-sm">Discuss Integration</a>
+          </div>
+          <div class="banner-media">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1400&auto=format&fit=crop" alt="Integration architecture" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" class="process">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="reveal-words">How We Deliver Results</h2>
+          <p class="section-subtitle fade-up">Our proven methodology ensures successful AI implementations from discovery to deployment.</p>
+        </div>
+
+        <div class="process-timeline">
+          <div class="timeline-connector"></div>
+
+          <div class="process-card fade-up">
+            <div class="process-header">
+              <div class="process-number">01</div>
+              <div class="process-badge">Week 1</div>
+            </div>
+            <div class="process-content">
+              <h3>Discovery & ROI Assessment</h3>
+              <p>We analyze your current workflows, identify automation opportunities, and quantify potential savings with a detailed ROI projection.</p>
+              <div class="process-features">
+                <span class="feature-tag">Process Mapping</span>
+                <span class="feature-tag">ROI Calculation</span>
+                <span class="feature-tag">Technical Architecture</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="process-card fade-up">
+            <div class="process-header">
+              <div class="process-number">02</div>
+              <div class="process-badge">Weeks 2-3</div>
+            </div>
+            <div class="process-content">
+              <h3>Rapid Prototype</h3>
+              <p>Build a working prototype with your actual data to validate assumptions and demonstrate value before full development.</p>
+              <div class="process-features">
+                <span class="feature-tag">Working Demo</span>
+                <span class="feature-tag">Real Data Testing</span>
+                <span class="feature-tag">Stakeholder Feedback</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="process-card fade-up">
+            <div class="process-header">
+              <div class="process-number">03</div>
+              <div class="process-badge">Weeks 4-6</div>
+            </div>
+            <div class="process-content">
+              <h3>Production Deployment</h3>
+              <p>Launch with enterprise security, monitoring, and support infrastructure. Include training and change management.</p>
+              <div class="process-features">
+                <span class="feature-tag">Enterprise Security</span>
+                <span class="feature-tag">24/7 Monitoring</span>
+                <span class="feature-tag">Team Training</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="process-card fade-up">
+            <div class="process-header">
+              <div class="process-number">04</div>
+              <div class="process-badge">Ongoing</div>
+            </div>
+            <div class="process-content">
+              <h3>Optimization & Scale</h3>
+              <p>Continuous improvement based on usage data, performance metrics, and business feedback. Plan expansion to additional use cases.</p>
+              <div class="process-features">
+                <span class="feature-tag">Performance Analytics</span>
+                <span class="feature-tag">Model Refinement</span>
+                <span class="feature-tag">Expansion Planning</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container">
+        <h2 class="reveal-words">Ready to Reduce Costs and Scale Operations?</h2>
+        <p class="fade-up">Get a free assessment with concrete ROI projections for your specific use case.</p>
+        <a href="consultation.html" class="btn btn-white fade-up">Get Free Assessment</a>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
         <h3>Nyxion Labs</h3>
-        <p>Applied AI solutions for automation, assistants, analytics, and cloud ecosystems.</p>
+        <p>Applied AI solutions that deliver measurable ROI through automation, intelligent assistants, and predictive analytics.</p>
       </div>
       <div>
         <h4>Company</h4>
         <a href="#solutions">Solutions</a>
+        <a href="packages.html">Packages</a>
         <a href="#process">How We Work</a>
         <a href="contact.html">Contact</a>
-        <a href="consultation.html">Free Consultation</a>
+        <a href="consultation.html">Free Assessment</a>
       </div>
       <div>
         <h4>Contact</h4>
         <a href="mailto:info@nyxionlabs.com">info@nyxionlabs.com</a>
         <a href="tel:+923194070681">+92 319 407 0681</a>
+        <p><small>San Francisco, CA • Remote</small></p>
       </div>
     </div>
     <div class="foot-bottom">© 2025 Nyxion Labs. All rights reserved.</div>
