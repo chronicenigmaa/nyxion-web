@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Nyxion Labs · Live AI Demos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="demos-styles.css" />
+  <link rel="icon" type="image/png" href="./logo-Photoroom.png" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="brand" aria-label="Nyxion Labs — Home">
+        <img class="brand-mark" src="./logo-Photoroom.png" alt="Nyxion Labs" />
+        <span class="brand-name">Nyxion Labs</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/consultation.html" class="btn btn-primary">Get Started</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="demos-hero">
+      <div class="container">
+        <h1>Live AI Demos</h1>
+        <p>Experience our production-ready AI solutions in action. Each demo showcases real implementations with enterprise-grade functionality.</p>
+        <div class="hero-badges">
+          <span class="badge">✓ Production Ready</span>
+          <span class="badge">✓ Enterprise Security</span>
+          <span class="badge">✓ Real-Time Processing</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <div class="container">
+        <div class="demo-card">
+          <div class="toolbar">
+            <div class="tabs" role="tablist" aria-label="Nyxion AI Demos">
+              <button class="tab active" data-target="#rag" aria-selected="true">Grounded Q&A</button>
+              <button class="tab" data-target="#invoice">Invoice Extraction</button>
+              <button class="tab" data-target="#forecast">Demand Forecasting</button>
+              <button class="tab" data-target="#anomaly">Anomaly Detection</button>
+            </div>
+
+            <div class="actions">
+              <a id="open-demo" class="btn btn-outline" target="_blank" rel="noopener">Open in New Tab ↗</a>
+            </div>
+          </div>
+
+          <div class="demo-info-container">
+            <div class="demo-info active" id="info-rag">
+              <h3>Grounded Q&A System</h3>
+              <p>Ask questions about your documents and receive accurate, source-cited answers. Our RAG (Retrieval-Augmented Generation) system grounds responses in your actual data, eliminating hallucinations.</p>
+              <div class="how-to">
+                <strong>How to use:</strong> Upload your documents (PDF, DOCX, TXT), then ask natural language questions. The system will retrieve relevant passages and generate answers with source citations.
+              </div>
+            </div>
+
+            <div class="demo-info" id="info-invoice">
+              <h3>Invoice Data Extraction</h3>
+              <p>Automatically extract structured data from invoices with high accuracy. Our AI handles various invoice formats, layouts, and languages to capture vendor details, line items, totals, and dates.</p>
+              <div class="how-to">
+                <strong>How to use:</strong> Upload an invoice image or PDF. The system will automatically detect and extract key fields including invoice number, dates, amounts, vendor information, and line items.
+              </div>
+            </div>
+
+            <div class="demo-info" id="info-forecast">
+              <h3>Demand Forecasting</h3>
+              <p>Predict future demand patterns using historical data and advanced time-series models. Our forecasting engine helps optimize inventory, reduce waste, and improve supply chain planning.</p>
+              <div class="how-to">
+                <strong>How to use:</strong> Upload historical sales or demand data (CSV format with dates and quantities). Specify your forecast horizon, and the model will generate predictions with confidence intervals.
+              </div>
+            </div>
+
+            <div class="demo-info" id="info-anomaly">
+              <h3>Anomaly Detection</h3>
+              <p>Identify unusual patterns and outliers in your data streams in real-time. Perfect for fraud detection, quality control, system monitoring, and predictive maintenance applications.</p>
+              <div class="how-to">
+                <strong>How to use:</strong> Upload your time-series or tabular data. The system will analyze patterns and flag anomalies with severity scores, helping you catch issues before they become problems.
+              </div>
+            </div>
+          </div>
+
+          <div class="frame-wrap" aria-live="polite">
+            <div class="frame-pane active" id="rag">
+              <div class="skeleton" aria-hidden="true"></div>
+              <iframe
+                title="Grounded Q&A Demo"
+                loading="lazy"
+                data-src="https://nyxionlabs-nyxion-rag.hf.space?__theme=light"
+                allow="clipboard-write; fullscreen">
+              </iframe>
+            </div>
+
+            <div class="frame-pane" id="invoice">
+              <div class="skeleton" aria-hidden="true"></div>
+              <iframe
+                title="Invoice Extraction Demo"
+                loading="lazy"
+                data-src="https://nyxionlabs-nyxion-invoice.hf.space?__theme=light"
+                allow="clipboard-write; fullscreen">
+              </iframe>
+            </div>
+
+            <div class="frame-pane" id="forecast">
+              <div class="skeleton" aria-hidden="true"></div>
+              <iframe
+                title="Demand Forecasting Demo"
+                loading="lazy"
+                data-src="https://nyxionlabs-nyxion-forecast.hf.space?__theme=light"
+                allow="clipboard-write; fullscreen">
+              </iframe>
+            </div>
+
+            <div class="frame-pane" id="anomaly">
+              <div class="skeleton" aria-hidden="true"></div>
+              <iframe
+                title="Anomaly Detection Demo"
+                loading="lazy"
+                data-src="https://nyxionlabs-nyxion-anomaly.hf.space?__theme=light"
+                allow="clipboard-write; fullscreen">
+              </iframe>
+            </div>
+          </div>
+
+          <div class="help">
+            <p>
+              If an embed doesn't load, your browser or host's security policy may block third-party frames.
+              Use "Open in New Tab", or allow <code>*.hf.space</code> in your Content-Security-Policy.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <span>© <span id="yr"></span> Nyxion Labs</span>
+        <span class="dot">•</span>
+        <a href="/" aria-label="Back to home">nyxionlabs.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const tabs = Array.from(document.querySelectorAll('.tab'));
+    const panes = Array.from(document.querySelectorAll('.frame-pane'));
+    const infos = Array.from(document.querySelectorAll('.demo-info'));
+    const button = document.getElementById('open-demo');
+    const year = document.getElementById('yr');
+    year.textContent = new Date().getFullYear();
+
+    function activate(targetSel) {
+      tabs.forEach(t => {
+        const isActive = t.dataset.target === targetSel;
+        t.classList.toggle('active', isActive);
+        t.setAttribute('aria-selected', isActive);
+      });
+
+      panes.forEach(p => {
+        const on = ('#' + p.id) === targetSel;
+        p.classList.toggle('active', on);
+        const iframe = p.querySelector('iframe');
+        const skeleton = p.querySelector('.skeleton');
+        
+        if (on) {
+          if (!iframe.src) {
+            iframe.src = iframe.dataset.src;
+          }
+          button.href = iframe.src || iframe.dataset.src;
+          
+          iframe.addEventListener('load', () => {
+            skeleton.style.opacity = '0';
+            setTimeout(() => skeleton.style.display = 'none', 300);
+          }, { once: true });
+        }
+      });
+
+      infos.forEach(info => {
+        const infoId = targetSel.replace('#', 'info-');
+        info.classList.toggle('active', info.id === infoId);
+      });
+    }
+
+    tabs.forEach(t => t.addEventListener('click', () => activate(t.dataset.target)));
+    activate('#rag');
+  </script>
+</body>
+</html>
